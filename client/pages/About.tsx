@@ -287,7 +287,9 @@ export default function About() {
               />
               <div className="p-6 bg-white">
                 <h3 className="font-semibold text-foreground mb-1">Our Team</h3>
-                <p className="text-sm text-muted-foreground">Passionate about your success</p>
+                <p className="text-sm text-muted-foreground">
+                  Passionate about your success
+                </p>
               </div>
             </div>
 
@@ -298,8 +300,12 @@ export default function About() {
                 className="w-full h-64 object-cover"
               />
               <div className="p-6 bg-white">
-                <h3 className="font-semibold text-foreground mb-1">Collaboration</h3>
-                <p className="text-sm text-muted-foreground">Working together for excellence</p>
+                <h3 className="font-semibold text-foreground mb-1">
+                  Collaboration
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Working together for excellence
+                </p>
               </div>
             </div>
 
@@ -310,8 +316,12 @@ export default function About() {
                 className="w-full h-64 object-cover"
               />
               <div className="p-6 bg-white">
-                <h3 className="font-semibold text-foreground mb-1">Professional Service</h3>
-                <p className="text-sm text-muted-foreground">Expert guidance every step</p>
+                <h3 className="font-semibold text-foreground mb-1">
+                  Professional Service
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Expert guidance every step
+                </p>
               </div>
             </div>
           </div>

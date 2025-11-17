@@ -109,7 +109,8 @@ export default function Services() {
               Real-World Impact
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              See how Mwamunda Investment Limited is empowering businesses across Kenya
+              See how Mwamunda Investment Limited is empowering businesses
+              across Kenya
             </p>
           </div>
 
@@ -121,8 +122,12 @@ export default function Services() {
                 className="w-full h-80 object-cover"
               />
               <div className="p-6 bg-white">
-                <h3 className="font-semibold text-foreground mb-1">Serving Communities</h3>
-                <p className="text-sm text-muted-foreground">Reaching micro-entrepreneurs across all counties</p>
+                <h3 className="font-semibold text-foreground mb-1">
+                  Serving Communities
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Reaching micro-entrepreneurs across all counties
+                </p>
               </div>
             </div>
 
@@ -133,8 +138,12 @@ export default function Services() {
                 className="w-full h-80 object-cover"
               />
               <div className="p-6 bg-white">
-                <h3 className="font-semibold text-foreground mb-1">Direct Support</h3>
-                <p className="text-sm text-muted-foreground">Field agents providing personalized service</p>
+                <h3 className="font-semibold text-foreground mb-1">
+                  Direct Support
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Field agents providing personalized service
+                </p>
               </div>
             </div>
           </div>
@@ -146,8 +155,12 @@ export default function Services() {
               className="w-full h-80 object-cover"
             />
             <div className="p-6 bg-white">
-              <h3 className="font-semibold text-foreground mb-1">Success Stories</h3>
-              <p className="text-sm text-muted-foreground">Transforming livelihoods through accessible finance</p>
+              <h3 className="font-semibold text-foreground mb-1">
+                Success Stories
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Transforming livelihoods through accessible finance
+              </p>
             </div>
           </div>
         </div>

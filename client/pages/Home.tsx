@@ -438,7 +438,8 @@ export default function Home() {
               Success Stories
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Real people, real results. See how Mwamunda is transforming lives across Kenya
+              Real people, real results. See how Mwamunda is transforming lives
+              across Kenya
             </p>
           </div>
 
@@ -452,13 +453,18 @@ export default function Home() {
               <div className="p-6 bg-white">
                 <div className="flex gap-1 mb-3">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-yellow-400">★</span>
+                    <span key={i} className="text-yellow-400">
+                      ★
+                    </span>
                   ))}
                 </div>
                 <p className="text-muted-foreground italic mb-4">
-                  "Mwamunda gave us the financial support we needed to expand our business. The process was quick and transparent."
+                  "Mwamunda gave us the financial support we needed to expand
+                  our business. The process was quick and transparent."
                 </p>
-                <p className="font-semibold text-foreground">Small Business Owner</p>
+                <p className="font-semibold text-foreground">
+                  Small Business Owner
+                </p>
               </div>
             </div>
 
@@ -471,11 +477,14 @@ export default function Home() {
               <div className="p-6 bg-white">
                 <div className="flex gap-1 mb-3">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-yellow-400">★</span>
+                    <span key={i} className="text-yellow-400">
+                      ★
+                    </span>
                   ))}
                 </div>
                 <p className="text-muted-foreground italic mb-4">
-                  "With fair rates and helpful support, we've been able to grow sustainably. Highly recommended!"
+                  "With fair rates and helpful support, we've been able to grow
+                  sustainably. Highly recommended!"
                 </p>
                 <p className="font-semibold text-foreground">Entrepreneur</p>
               </div>
@@ -490,11 +499,14 @@ export default function Home() {
               <div className="p-6 bg-white">
                 <div className="flex gap-1 mb-3">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-yellow-400">★</span>
+                    <span key={i} className="text-yellow-400">
+                      ★
+                    </span>
                   ))}
                 </div>
                 <p className="text-muted-foreground italic mb-4">
-                  "Unlike predatory lenders, Mwamunda's transparent approach and genuine care for our success stands out."
+                  "Unlike predatory lenders, Mwamunda's transparent approach and
+                  genuine care for our success stands out."
                 </p>
                 <p className="font-semibold text-foreground">Group Lender</p>
               </div>

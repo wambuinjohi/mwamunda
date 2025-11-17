@@ -13,7 +13,10 @@ interface ContactModalProps {
   onOpenChange: (open: boolean) => void;
 }
 
-export default function ContactModal({ open, onOpenChange }: ContactModalProps) {
+export default function ContactModal({
+  open,
+  onOpenChange,
+}: ContactModalProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
