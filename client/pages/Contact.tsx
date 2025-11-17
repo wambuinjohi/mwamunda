@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, ArrowRight, CheckCircle } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowRight, CheckCircle, AlertCircle } from "lucide-react";
 import Navigation from "@/components/Navigation";
+import { submitContact } from "@/lib/contacts";
+import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
