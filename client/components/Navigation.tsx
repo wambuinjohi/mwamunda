@@ -24,10 +24,6 @@ export default function Navigation() {
     { href: "/contact", label: "Contact" },
   ];
 
-  const adminLinks = [
-    { href: "/admin/init", label: "Admin" },
-  ];
-
   return (
     <nav
       className={`fixed w-full top-0 z-50 transition-all duration-300 ${
