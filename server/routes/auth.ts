@@ -52,12 +52,10 @@ export const initializeUsersTable: RequestHandler = async (req, res) => {
     const errorMessage =
       error instanceof Error ? error.message : "Unknown error";
     console.error("initializeUsersTable error:", errorMessage);
-    res
-      .status(500)
-      .json({
-        error: "Failed to initialize users table",
-        details: errorMessage,
-      });
+    res.status(500).json({
+      error: "Failed to initialize users table",
+      details: errorMessage,
+    });
   }
 };
 
@@ -268,12 +266,10 @@ export const initializeContactsTable: RequestHandler = async (req, res) => {
     const errorMessage =
       error instanceof Error ? error.message : "Unknown error";
     console.error("initializeContactsTable error:", errorMessage);
-    res
-      .status(500)
-      .json({
-        error: "Failed to initialize contacts table",
-        details: errorMessage,
-      });
+    res.status(500).json({
+      error: "Failed to initialize contacts table",
+      details: errorMessage,
+    });
   }
 };
 
