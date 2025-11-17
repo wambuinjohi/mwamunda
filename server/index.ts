@@ -2,6 +2,13 @@ import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import { handleDemo } from "./routes/demo";
+import {
+  initializeUsersTable,
+  registerUser,
+  loginUser,
+  getUser,
+  getAllUsers,
+} from "./routes/auth";
 
 export function createServer() {
   const app = express();
@@ -18,6 +25,13 @@ export function createServer() {
   });
 
   app.get("/api/demo", handleDemo);
+
+  // Auth routes
+  app.post("/api/auth/init-users-table", initializeUsersTable);
+  app.post("/api/auth/register", registerUser);
+  app.post("/api/auth/login", loginUser);
+  app.get("/api/auth/user/:id", getUser);
+  app.get("/api/auth/users", getAllUsers);
 
   return app;
 }
