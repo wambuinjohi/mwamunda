@@ -13,6 +13,9 @@ import {
   submitContact,
   getAllContacts,
   updateContactStatus,
+  deleteContact,
+  addInternalNotes,
+  sendResponseEmail,
 } from "./routes/auth";
 
 export function createServer() {
