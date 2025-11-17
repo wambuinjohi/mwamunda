@@ -310,13 +310,13 @@ export default function Contact() {
       </section>
 
       {/* Additional Info */}
-      <section className="py-20 md:py-32 bg-gradient-to-b from-blue-50 to-white">
+      <section className="py-16 sm:py-20 md:py-32 bg-gradient-to-b from-blue-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-foreground text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground text-center mb-8 sm:mb-12">
             Why Get In Touch?
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {[
               {
                 title: "Loan Inquiries",
