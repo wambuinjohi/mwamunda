@@ -162,7 +162,23 @@ export const getAllUsers: RequestHandler = async (req, res) => {
       },
     });
 
+    if (!response.ok) {
+      throw new Error(`API returned status ${response.status}`);
+    }
+
     const users = await response.json();
+
+    // Handle case where API returns an error message
+    if (typeof users === 'object' && users.error) {
+      res.status(500).json({ error: users.error });
+      return;
+    }
+
+    // Ensure users is an array
+    if (!Array.isArray(users)) {
+      res.json([]);
+      return;
+    }
 
     // Remove passwords
     const usersWithoutPasswords = users.map((u: any) => {
@@ -172,7 +188,12 @@ export const getAllUsers: RequestHandler = async (req, res) => {
 
     res.json(usersWithoutPasswords);
   } catch (error) {
-    res.status(500).json({ error: "Failed to fetch users" });
+    const errorMessage = error instanceof Error ? error.message : "Unknown error";
+    console.error("getAllUsers error:", errorMessage);
+    res.status(500).json({
+      error: "Failed to fetch users",
+      details: errorMessage
+    });
   }
 };
 
