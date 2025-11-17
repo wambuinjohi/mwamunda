@@ -37,13 +37,13 @@ export default function Contact() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative pt-32 md:pt-40 pb-20 bg-gradient-to-br from-primary/10 to-secondary/10">
+      <section className="relative pt-24 sm:pt-28 md:pt-32 lg:pt-40 pb-16 sm:pb-20 bg-gradient-to-br from-primary/10 to-secondary/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center animate-slide-in-down">
-            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6">
               Get In Touch
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
               Have questions? We'd love to hear from you. Reach out to our team
               today.
             </p>
@@ -52,80 +52,82 @@ export default function Contact() {
       </section>
 
       {/* Contact Info Cards */}
-      <section className="py-20 md:py-32">
+      <section className="py-16 sm:py-20 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8 mb-20">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-20">
             {/* Email */}
-            <div className="text-center p-8 rounded-2xl border border-border hover:border-primary/50 hover:shadow-lg transition-all duration-300 animate-slide-in-up">
-              <div className="w-12 h-12 rounded-lg bg-primary/20 text-primary flex items-center justify-center mx-auto mb-4">
-                <Mail className="w-6 h-6" />
+            <div className="text-center p-5 sm:p-6 md:p-8 rounded-2xl border border-border hover:border-primary/50 hover:shadow-lg transition-all duration-300 animate-slide-in-up">
+              <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg bg-primary/20 text-primary flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <Mail className="w-5 sm:w-6 h-5 sm:h-6" />
               </div>
-              <h3 className="text-lg font-bold text-foreground mb-2">Email</h3>
+              <h3 className="text-base sm:text-lg font-bold text-foreground mb-2">
+                Email
+              </h3>
               <a
                 href="mailto:info@mwamunda.com"
-                className="text-primary hover:underline mb-2 block"
+                className="text-primary hover:underline mb-2 block text-xs sm:text-sm break-all"
               >
                 info@mwamunda.com
               </a>
               <a
                 href="mailto:mwamundainvestment@gmail.com"
-                className="text-primary hover:underline block"
+                className="text-primary hover:underline block text-xs sm:text-sm break-all"
               >
                 Mwamundainvestment@gmail.com
               </a>
-              <p className="text-muted-foreground text-sm mt-4">
+              <p className="text-muted-foreground text-xs sm:text-sm mt-3 sm:mt-4">
                 We'll respond within 24 hours
               </p>
             </div>
 
             {/* Phone */}
             <div
-              className="text-center p-8 rounded-2xl border border-border hover:border-secondary/50 hover:shadow-lg transition-all duration-300 animate-slide-in-up"
+              className="text-center p-5 sm:p-6 md:p-8 rounded-2xl border border-border hover:border-secondary/50 hover:shadow-lg transition-all duration-300 animate-slide-in-up"
               style={{ animationDelay: "0.1s" }}
             >
-              <div className="w-12 h-12 rounded-lg bg-secondary/20 text-secondary flex items-center justify-center mx-auto mb-4">
-                <Phone className="w-6 h-6" />
+              <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg bg-secondary/20 text-secondary flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <Phone className="w-5 sm:w-6 h-5 sm:h-6" />
               </div>
-              <h3 className="text-lg font-bold text-foreground mb-4">
+              <h3 className="text-base sm:text-lg font-bold text-foreground mb-3 sm:mb-4">
                 Phone & WhatsApp
               </h3>
               <div className="space-y-2">
                 <a
                   href="tel:+254106673939"
-                  className="text-primary hover:underline block font-semibold"
+                  className="text-primary hover:underline block font-semibold text-xs sm:text-sm"
                 >
                   0106673939
                 </a>
                 <a
                   href="tel:+254784222284"
-                  className="text-primary hover:underline block font-semibold"
+                  className="text-primary hover:underline block font-semibold text-xs sm:text-sm"
                 >
                   0784222284
                 </a>
                 <a
                   href="tel:+254708192783"
-                  className="text-primary hover:underline block font-semibold"
+                  className="text-primary hover:underline block font-semibold text-xs sm:text-sm"
                 >
                   0708192783
                 </a>
               </div>
-              <p className="text-muted-foreground text-sm mt-4">
+              <p className="text-muted-foreground text-xs sm:text-sm mt-3 sm:mt-4">
                 Call / SMS / WhatsApp anytime
               </p>
             </div>
 
             {/* Address */}
             <div
-              className="text-center p-8 rounded-2xl border border-border hover:border-accent/50 hover:shadow-lg transition-all duration-300 animate-slide-in-up"
+              className="text-center p-5 sm:p-6 md:p-8 rounded-2xl border border-border hover:border-accent/50 hover:shadow-lg transition-all duration-300 animate-slide-in-up"
               style={{ animationDelay: "0.2s" }}
             >
-              <div className="w-12 h-12 rounded-lg bg-accent/20 text-accent flex items-center justify-center mx-auto mb-4">
-                <MapPin className="w-6 h-6" />
+              <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg bg-accent/20 text-accent flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <MapPin className="w-5 sm:w-6 h-5 sm:h-6" />
               </div>
-              <h3 className="text-lg font-bold text-foreground mb-4">
+              <h3 className="text-base sm:text-lg font-bold text-foreground mb-3 sm:mb-4">
                 Head Office
               </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
+              <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
                 Hussein Mayai Road
                 <br />
                 Opposite Kadzomba Plaza, Room 8<br />
@@ -284,9 +286,9 @@ export default function Contact() {
       </section>
 
       {/* Map Section */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-16 sm:py-20 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-foreground text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground text-center mb-8 sm:mb-12">
             Find Us
           </h2>
 
@@ -297,7 +299,8 @@ export default function Contact() {
               style={{ border: 0 }}
               loading="lazy"
               allowFullScreen
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3978.5234567890!2d39.5196!3d-3.2869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sMwamunda%20Investment%20Limited!5e0!3m2!1sen!2ske!4v1234567890"
+              title="Mwamunda Investment Limited Location in Kilifi, Kenya"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3978.2134567890123!2d39.84993!3d-3.63584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18418c08c8c8c8c9%3A0x1234567890abcdef!2sKilifi%2C%20Kenya!5e0!3m2!1sen!2ske!4v1700000000000"
             ></iframe>
           </div>
 
@@ -309,13 +312,13 @@ export default function Contact() {
       </section>
 
       {/* Additional Info */}
-      <section className="py-20 md:py-32 bg-gradient-to-b from-blue-50 to-white">
+      <section className="py-16 sm:py-20 md:py-32 bg-gradient-to-b from-blue-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-foreground text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground text-center mb-8 sm:mb-12">
             Why Get In Touch?
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {[
               {
                 title: "Loan Inquiries",

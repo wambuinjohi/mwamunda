@@ -26,7 +26,7 @@ export default function Home() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative pt-32 md:pt-40 pb-20 md:pb-32 overflow-hidden">
+      <section className="relative pt-24 sm:pt-28 md:pt-32 lg:pt-40 pb-16 sm:pb-20 md:pb-32 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute w-96 h-96 bg-primary/10 rounded-full blur-3xl top-20 left-10 animate-float"></div>
           <div
@@ -44,51 +44,57 @@ export default function Home() {
                 </span>
               </div>
 
-              <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
                 Financial Solutions for the{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
                   Underserved
                 </span>
               </h1>
 
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
                 Mwamunda Investment Limited provides affordable, accessible
                 financial products designed to help micro and small businesses
                 thrive. We're committed to putting predatory lenders out of
                 business.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link
                   to="/contact"
-                  className="px-8 py-4 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2 group"
+                  className="px-6 sm:px-8 py-3 sm:py-4 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-semibold text-sm sm:text-base hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center gap-2 group"
                 >
                   Get Started Today
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
 
                 <Link
                   to="/about"
-                  className="px-8 py-4 rounded-lg border-2 border-primary text-primary font-semibold hover:bg-primary/5 transition-all duration-300"
+                  className="px-6 sm:px-8 py-3 sm:py-4 rounded-lg border-2 border-primary text-primary font-semibold text-sm sm:text-base hover:bg-primary/5 transition-all duration-300"
                 >
                   Learn More
                 </Link>
               </div>
 
-              <div className="flex gap-8 mt-12 pt-8 border-t border-border">
+              <div className="flex flex-wrap gap-4 sm:gap-6 md:gap-8 mt-8 sm:mt-10 md:mt-12 pt-6 sm:pt-8 border-t border-border">
                 <div
                   className="animate-slide-in-up"
                   style={{ animationDelay: "0.1s" }}
                 >
-                  <div className="text-3xl font-bold text-primary">2019</div>
-                  <p className="text-sm text-muted-foreground">Founded</p>
+                  <div className="text-2xl sm:text-3xl font-bold text-primary">
+                    2019
+                  </div>
+                  <p className="text-xs sm:text-sm text-muted-foreground">
+                    Founded
+                  </p>
                 </div>
                 <div
                   className="animate-slide-in-up"
                   style={{ animationDelay: "0.2s" }}
                 >
-                  <div className="text-3xl font-bold text-secondary">47+</div>
-                  <p className="text-sm text-muted-foreground">
+                  <div className="text-2xl sm:text-3xl font-bold text-secondary">
+                    47+
+                  </div>
+                  <p className="text-xs sm:text-sm text-muted-foreground">
                     Counties Served
                   </p>
                 </div>
@@ -96,8 +102,10 @@ export default function Home() {
                   className="animate-slide-in-up"
                   style={{ animationDelay: "0.3s" }}
                 >
-                  <div className="text-3xl font-bold text-accent">1000s</div>
-                  <p className="text-sm text-muted-foreground">
+                  <div className="text-2xl sm:text-3xl font-bold text-accent">
+                    1000s
+                  </div>
+                  <p className="text-xs sm:text-sm text-muted-foreground">
                     Families Empowered
                   </p>
                 </div>
@@ -124,52 +132,52 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-16 sm:py-20 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <div className="text-center mb-12 sm:mb-16 animate-fade-in">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4">
               Why Choose Mwamunda?
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
               We're dedicated to providing financial solutions that actually
               work for underserved communities
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {[
               {
-                icon: <Shield className="w-8 h-8" />,
+                icon: <Shield className="w-6 sm:w-8 h-6 sm:h-8" />,
                 title: "Trusted Partner",
                 description:
                   "Established micro-credit institution with proven track record in communities across Kenya",
               },
               {
-                icon: <Users className="w-8 h-8" />,
+                icon: <Users className="w-6 sm:w-8 h-6 sm:h-8" />,
                 title: "Community Focused",
                 description:
                   "We understand the unique needs of micro and small businesses and farmers",
               },
               {
-                icon: <Zap className="w-8 h-8" />,
+                icon: <Zap className="w-6 sm:w-8 h-6 sm:h-8" />,
                 title: "Fast Approval",
                 description:
                   "Quick processing and affordable terms designed for those excluded by mainstream finance",
               },
               {
-                icon: <Award className="w-8 h-8" />,
+                icon: <Award className="w-6 sm:w-8 h-6 sm:h-8" />,
                 title: "Expert Team",
                 description:
                   "Experienced board members in investment, microfinance, and product development",
               },
               {
-                icon: <Target className="w-8 h-8" />,
+                icon: <Target className="w-6 sm:w-8 h-6 sm:h-8" />,
                 title: "Field Agents",
                 description:
                   "Our dedicated agents are eager to serve you across every county in Kenya",
               },
               {
-                icon: <CheckCircle className="w-8 h-8" />,
+                icon: <CheckCircle className="w-6 sm:w-8 h-6 sm:h-8" />,
                 title: "Accessible",
                 description:
                   "Honest, affordable financial products for those ignored by predatory lenders",
@@ -177,16 +185,18 @@ export default function Home() {
             ].map((feature, idx) => (
               <div
                 key={idx}
-                className="group p-8 rounded-2xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 animate-slide-in-up"
+                className="group p-5 sm:p-6 md:p-8 rounded-2xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 animate-slide-in-up"
                 style={{ animationDelay: `${idx * 0.1}s` }}
               >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-primary group-hover:text-white transition-all duration-300">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-3">
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-foreground mb-2 sm:mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-muted-foreground">{feature.description}</p>
+                <p className="text-xs sm:text-sm md:text-base text-muted-foreground">
+                  {feature.description}
+                </p>
               </div>
             ))}
           </div>
@@ -194,32 +204,32 @@ export default function Home() {
       </section>
 
       {/* Products Section */}
-      <section className="py-20 md:py-32 bg-gradient-to-b from-blue-50/50 to-white">
+      <section className="py-16 sm:py-20 md:py-32 bg-gradient-to-b from-blue-50/50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <div className="text-center mb-12 sm:mb-16 animate-fade-in">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 sm:mb-4">
               Our Financial Products
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
               Tailored solutions for individuals and business groups
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+          <div className="grid gap-6 sm:gap-8 lg:gap-12">
             <div className="group rounded-3xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 animate-slide-in-left">
-              <div className="h-48 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center group-hover:from-primary/30 transition-all duration-300">
-                <Users className="w-24 h-24 text-primary/40 group-hover:text-primary/60 transition-colors" />
+              <div className="h-40 sm:h-48 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center group-hover:from-primary/30 transition-all duration-300">
+                <Users className="w-16 sm:w-24 h-16 sm:h-24 text-primary/40 group-hover:text-primary/60 transition-colors" />
               </div>
-              <div className="p-8">
-                <h3 className="text-2xl font-bold text-foreground mb-4">
+              <div className="p-5 sm:p-6 md:p-8">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-3 sm:mb-4">
                   Fair Personal Loans
                 </h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-xs sm:text-sm md:text-base text-muted-foreground mb-5 sm:mb-6 leading-relaxed">
                   Affordable personal loans designed for individuals without
                   access to mainstream finance. Quick approval process with
                   terms that work for you.
                 </p>
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
                   {[
                     "Quick approval process",
                     "Affordable interest rates",
@@ -228,37 +238,37 @@ export default function Home() {
                   ].map((item, i) => (
                     <li
                       key={i}
-                      className="flex items-center gap-3 text-sm text-foreground"
+                      className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-foreground"
                     >
-                      <CheckCircle className="w-5 h-5 text-secondary flex-shrink-0" />
+                      <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-secondary flex-shrink-0" />
                       {item}
                     </li>
                   ))}
                 </ul>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all group/link"
+                  className="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:gap-3 transition-all group/link"
                 >
                   Learn More
-                  <ArrowRight className="w-5 h-5 group-hover/link:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 group-hover/link:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>
 
             <div className="group rounded-3xl overflow-hidden border border-border hover:border-secondary/50 transition-all duration-300 animate-slide-in-right">
-              <div className="h-48 bg-gradient-to-br from-secondary/20 to-secondary/5 flex items-center justify-center group-hover:from-secondary/30 transition-all duration-300">
-                <Target className="w-24 h-24 text-secondary/40 group-hover:text-secondary/60 transition-colors" />
+              <div className="h-40 sm:h-48 bg-gradient-to-br from-secondary/20 to-secondary/5 flex items-center justify-center group-hover:from-secondary/30 transition-all duration-300">
+                <Target className="w-16 sm:w-24 h-16 sm:h-24 text-secondary/40 group-hover:text-secondary/60 transition-colors" />
               </div>
-              <div className="p-8">
-                <h3 className="text-2xl font-bold text-foreground mb-4">
+              <div className="p-5 sm:p-6 md:p-8">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-3 sm:mb-4">
                   Chama Loans
                 </h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
+                <p className="text-xs sm:text-sm md:text-base text-muted-foreground mb-5 sm:mb-6 leading-relaxed">
                   Specialized financing for business groups and cooperatives.
                   Perfect for groups looking to scale operations and support
                   collective growth.
                 </p>
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
                   {[
                     "Group-focused financing",
                     "Capacity building support",
@@ -267,19 +277,19 @@ export default function Home() {
                   ].map((item, i) => (
                     <li
                       key={i}
-                      className="flex items-center gap-3 text-sm text-foreground"
+                      className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-foreground"
                     >
-                      <CheckCircle className="w-5 h-5 text-secondary flex-shrink-0" />
+                      <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-secondary flex-shrink-0" />
                       {item}
                     </li>
                   ))}
                 </ul>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2 text-secondary font-semibold hover:gap-3 transition-all group/link"
+                  className="inline-flex items-center gap-2 text-secondary font-semibold text-sm hover:gap-3 transition-all group/link"
                 >
                   Learn More
-                  <ArrowRight className="w-5 h-5 group-hover/link:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 group-hover/link:translate-x-1 transition-transform" />
                 </Link>
               </div>
             </div>

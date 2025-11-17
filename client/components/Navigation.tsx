@@ -30,27 +30,27 @@ export default function Navigation() {
         isScrolled ? "bg-white/90 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-32 md:h-40">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16 sm:h-20 md:h-24 lg:h-28">
           {/* Logo */}
           <Link
             to="/"
-            className="flex items-center gap-2 group hover:opacity-80 transition-opacity"
+            className="flex items-center gap-2 group hover:opacity-80 transition-opacity flex-shrink-0"
           >
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2F675a5c01881345b88968fcdd971866d7%2F7e6019eab478401686a679312028d4e8?format=webp&width=800"
               alt="Mwamunda Investment Limited"
-              className="h-24 md:h-28 w-auto"
+              className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-4 lg:gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors duration-300 relative group"
+                className="text-xs lg:text-sm font-medium text-foreground hover:text-primary transition-colors duration-300 relative group"
               >
                 {link.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300"></span>
@@ -62,7 +62,7 @@ export default function Navigation() {
           <div className="hidden md:block">
             <button
               onClick={() => setIsContactModalOpen(true)}
-              className="px-6 py-2.5 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 transform hover:-translate-y-0.5"
+              className="px-4 lg:px-6 py-2 lg:py-2.5 text-sm lg:text-base rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 transform hover:-translate-y-0.5 whitespace-nowrap"
             >
               Get Started
             </button>
@@ -71,7 +71,7 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
+            className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors flex-shrink-0"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -79,12 +79,12 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden pb-4 space-y-2 animate-slide-in-down">
+          <div className="md:hidden pb-3 sm:pb-4 space-y-2 animate-slide-in-down bg-white/95 backdrop-blur-md rounded-b-2xl">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
-                className="block px-4 py-2 rounded-lg text-foreground hover:bg-muted transition-colors"
+                className="block px-3 sm:px-4 py-2.5 rounded-lg text-sm text-foreground hover:bg-muted transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
@@ -95,7 +95,7 @@ export default function Navigation() {
                 setIsContactModalOpen(true);
                 setIsOpen(false);
               }}
-              className="block w-full px-4 py-2 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-semibold text-center hover:shadow-lg transition-all duration-300"
+              className="block w-full mx-3 sm:mx-4 px-3 sm:px-4 py-2.5 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-semibold text-center text-sm hover:shadow-lg transition-all duration-300"
             >
               Get Started
             </button>
