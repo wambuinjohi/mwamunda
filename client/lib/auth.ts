@@ -74,7 +74,25 @@ export async function getAllUsers(): Promise<User[]> {
       "Content-Type": "application/json",
     },
   });
-  return response.json();
+
+  if (!response.ok) {
+    throw new Error(`API error: ${response.status} ${response.statusText}`);
+  }
+
+  const data = await response.json();
+
+  // Handle API error responses
+  if (data.error) {
+    throw new Error(data.error);
+  }
+
+  // Ensure we return an array
+  if (!Array.isArray(data)) {
+    console.warn("getAllUsers returned non-array response:", data);
+    return [];
+  }
+
+  return data;
 }
 
 // Local storage helpers
