@@ -25,7 +25,7 @@ export default function AdminSidebar({
       id: "users",
       icon: <Users className="w-5 h-5" />,
       label: "Users",
-      path: "/admin/users",
+      path: "/admin/dashboard",
     },
     {
       id: "contacts",
