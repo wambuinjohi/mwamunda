@@ -8,6 +8,7 @@ import {
   loginUser,
   getUser,
   getAllUsers,
+  setupSystem,
 } from "./routes/auth";
 
 export function createServer() {
