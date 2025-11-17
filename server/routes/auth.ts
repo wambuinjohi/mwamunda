@@ -3,6 +3,21 @@ import crypto from "crypto";
 
 const API_URL = "https://mwamunda.ziratech.com/api.php";
 
+interface ContactData {
+  name: string;
+  email: string;
+  phone?: string;
+  subject: string;
+  message: string;
+}
+
+interface ContactResponse {
+  success: boolean;
+  message: string;
+  id?: number;
+  error?: string;
+}
+
 // Hash password
 function hashPassword(password: string): string {
   return crypto.createHash("sha256").update(password).digest("hex");
