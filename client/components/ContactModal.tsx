@@ -19,6 +19,7 @@ export default function ContactModal({
   open,
   onOpenChange,
 }: ContactModalProps) {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,6 +28,8 @@ export default function ContactModal({
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -35,16 +38,38 @@ export default function ContactModal({
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    setError(null);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
-      onOpenChange(false);
-    }, 2000);
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      await submitContact(formData);
+      setSubmitted(true);
+      toast({
+        title: "Success",
+        description: "Your message has been sent successfully!",
+      });
+      setTimeout(() => {
+        setSubmitted(false);
+        setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+        onOpenChange(false);
+      }, 2000);
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : "Failed to send message";
+      setError(errorMessage);
+      console.error("Error submitting contact:", err);
+      toast({
+        title: "Error",
+        description: errorMessage,
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
