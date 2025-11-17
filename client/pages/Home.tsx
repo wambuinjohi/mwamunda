@@ -350,7 +350,9 @@ export default function Home() {
                 Expert Support Every Step of the Way
               </h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Our dedicated team of financial experts is committed to understanding your unique needs and providing personalized solutions tailored to your goals.
+                Our dedicated team of financial experts is committed to
+                understanding your unique needs and providing personalized
+                solutions tailored to your goals.
               </p>
 
               <div className="space-y-4 mb-8">
@@ -361,8 +363,12 @@ export default function Home() {
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground">Professional Guidance</h3>
-                    <p className="text-muted-foreground text-sm">Expert advice from industry professionals</p>
+                    <h3 className="font-semibold text-foreground">
+                      Professional Guidance
+                    </h3>
+                    <p className="text-muted-foreground text-sm">
+                      Expert advice from industry professionals
+                    </p>
                   </div>
                 </div>
 
@@ -373,8 +379,12 @@ export default function Home() {
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground">Fast Processing</h3>
-                    <p className="text-muted-foreground text-sm">Quick turnaround on applications and approvals</p>
+                    <h3 className="font-semibold text-foreground">
+                      Fast Processing
+                    </h3>
+                    <p className="text-muted-foreground text-sm">
+                      Quick turnaround on applications and approvals
+                    </p>
                   </div>
                 </div>
 
@@ -385,8 +395,12 @@ export default function Home() {
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground">Ongoing Support</h3>
-                    <p className="text-muted-foreground text-sm">Continuous assistance throughout your journey</p>
+                    <h3 className="font-semibold text-foreground">
+                      Ongoing Support
+                    </h3>
+                    <p className="text-muted-foreground text-sm">
+                      Continuous assistance throughout your journey
+                    </p>
                   </div>
                 </div>
               </div>
