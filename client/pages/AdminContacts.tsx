@@ -235,6 +235,22 @@ export default function AdminContacts() {
                 </div>
               </div>
             </div>
+
+            <div className="bg-white rounded-2xl p-6 border border-border shadow-sm">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-muted-foreground text-sm font-medium">
+                    Responded
+                  </p>
+                  <p className="text-4xl font-bold text-purple-600 mt-2">
+                    {contacts.filter((c) => c.status === "responded").length}
+                  </p>
+                </div>
+                <div className="w-12 h-12 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center">
+                  <Send className="w-6 h-6" />
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Filter Tabs */}
