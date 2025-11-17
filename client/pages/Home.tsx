@@ -111,22 +111,11 @@ export default function Home() {
               <div className="relative w-full h-96 md:h-full min-h-96">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl blur-2xl"></div>
                 <div className="absolute inset-0 rounded-3xl overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="inline-block p-6 bg-white rounded-2xl shadow-xl mb-6">
-                        <TrendingUp
-                          className="w-16 h-16 text-primary animate-bounce"
-                          style={{ animationDelay: "0.1s" }}
-                        />
-                      </div>
-                      <h3 className="text-2xl font-bold text-white">
-                        Growing Together
-                      </h3>
-                      <p className="text-white/80 mt-2">
-                        Your success is our mission
-                      </p>
-                    </div>
-                  </div>
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F675a5c01881345b88968fcdd971866d7%2F5c4477d10db1458d81e223d3d709fb74?format=webp&width=800"
+                    alt="Mwamunda Investment Limited Head Office"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
@@ -352,6 +341,95 @@ export default function Home() {
         </div>
       </section>
 
+      {/* How We Work Section */}
+      <section className="py-20 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="animate-slide-in-left">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+                Expert Support Every Step of the Way
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                Our dedicated team of financial experts is committed to
+                understanding your unique needs and providing personalized
+                solutions tailored to your goals.
+              </p>
+
+              <div className="space-y-4 mb-8">
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0">
+                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-primary/20">
+                      <span className="text-xl">💼</span>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground">
+                      Professional Guidance
+                    </h3>
+                    <p className="text-muted-foreground text-sm">
+                      Expert advice from industry professionals
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0">
+                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-secondary/20">
+                      <span className="text-xl">⚡</span>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground">
+                      Fast Processing
+                    </h3>
+                    <p className="text-muted-foreground text-sm">
+                      Quick turnaround on applications and approvals
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0">
+                    <div className="flex items-center justify-center h-12 w-12 rounded-md bg-accent/20">
+                      <span className="text-xl">🤝</span>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground">
+                      Ongoing Support
+                    </h3>
+                    <p className="text-muted-foreground text-sm">
+                      Continuous assistance throughout your journey
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <Link
+                to="/services"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors"
+              >
+                Explore Our Services
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
+
+            <div className="relative animate-slide-in-right">
+              <div className="relative w-full h-96 md:h-full min-h-96">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl blur-2xl"></div>
+                <div className="absolute inset-0 rounded-3xl overflow-hidden">
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F675a5c01881345b88968fcdd971866d7%2F502cbced94e140d6805e025fba6f1bde?format=webp&width=800"
+                    alt="Expert team member providing financial guidance"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="relative py-20 md:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-primary/80 opacity-90"></div>
@@ -400,7 +478,7 @@ export default function Home() {
           <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div>
               <img
-                src="https://cdn.builder.io/api/v1/image/assets%2Ffbf49e0b8b244100b448033b1a23a70b%2F92cea3121dc44b17903ff04a0698d8d8?format=webp&width=400"
+                src="https://cdn.builder.io/api/v1/image/assets%2F675a5c01881345b88968fcdd971866d7%2F7e6019eab478401686a679312028d4e8?format=webp&width=800"
                 alt="Mwamunda Investment Limited"
                 className="h-32 w-auto mb-4"
               />
