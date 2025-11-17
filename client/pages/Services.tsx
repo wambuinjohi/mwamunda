@@ -101,6 +101,58 @@ export default function Services() {
         </div>
       </section>
 
+      {/* Real Impact Section */}
+      <section className="py-20 md:py-32 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl font-bold text-foreground mb-4">
+              Real-World Impact
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              See how Mwamunda Investment Limited is empowering businesses across Kenya
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-slide-in-left">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F675a5c01881345b88968fcdd971866d7%2F854295e8b1354678a9547323638bb78b?format=webp&width=800"
+                alt="Customers receiving financial services"
+                className="w-full h-80 object-cover"
+              />
+              <div className="p-6 bg-white">
+                <h3 className="font-semibold text-foreground mb-1">Serving Communities</h3>
+                <p className="text-sm text-muted-foreground">Reaching micro-entrepreneurs across all counties</p>
+              </div>
+            </div>
+
+            <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-slide-in-right">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F675a5c01881345b88968fcdd971866d7%2F91865f6160c740a48553a6bf365816a0?format=webp&width=800"
+                alt="Team engagement with customers"
+                className="w-full h-80 object-cover"
+              />
+              <div className="p-6 bg-white">
+                <h3 className="font-semibold text-foreground mb-1">Direct Support</h3>
+                <p className="text-sm text-muted-foreground">Field agents providing personalized service</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-slide-in-up">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2F675a5c01881345b88968fcdd971866d7%2Fea9ae454497b46a5bcfe898a56afcb89?format=webp&width=800"
+              alt="Success stories from our customers"
+              className="w-full h-80 object-cover"
+            />
+            <div className="p-6 bg-white">
+              <h3 className="font-semibold text-foreground mb-1">Success Stories</h3>
+              <p className="text-sm text-muted-foreground">Transforming livelihoods through accessible finance</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-foreground/95 text-white py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
