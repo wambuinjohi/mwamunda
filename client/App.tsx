@@ -18,6 +18,7 @@ import AdminInit from "./pages/AdminInit";
 import AdminLogin from "./pages/AdminLogin";
 import AdminRegister from "./pages/AdminRegister";
 import AdminDashboard from "./pages/AdminDashboard";
+import AdminContacts from "./pages/AdminContacts";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
