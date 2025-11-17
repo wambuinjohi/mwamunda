@@ -29,11 +29,15 @@ export default function AdminDashboard() {
         const fetchedUsers = await getAllUsers();
         setUsers(fetchedUsers);
       } catch (error) {
+        const errorMessage =
+          error instanceof Error ? error.message : "Failed to fetch users";
+        console.error("Error fetching users:", error);
         toast({
           title: "Error",
-          description: "Failed to fetch users",
+          description: errorMessage,
           variant: "destructive",
         });
+        setUsers([]);
       } finally {
         setLoading(false);
       }

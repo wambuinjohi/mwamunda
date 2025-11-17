@@ -9,6 +9,10 @@ import {
   getUser,
   getAllUsers,
   setupSystem,
+  initializeContactsTable,
+  submitContact,
+  getAllContacts,
+  updateContactStatus,
 } from "./routes/auth";
 
 export function createServer() {
@@ -33,6 +37,14 @@ export function createServer() {
   app.post("/api/auth/login", loginUser);
   app.get("/api/auth/user/:id", getUser);
   app.get("/api/auth/users", getAllUsers);
+
+  // Contact routes
+  app.post("/api/contacts/init-table", initializeContactsTable);
+  app.post("/api/contacts", submitContact);
+  app.get("/api/contacts", getAllContacts);
+  app.put("/api/contacts/:id", updateContactStatus);
+
+  // Setup route
   app.post("/api/setup", setupSystem);
 
   return app;

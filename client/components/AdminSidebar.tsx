@@ -1,6 +1,14 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { LayoutDashboard, Users, LogOut, Menu, X, Home } from "lucide-react";
+import {
+  LayoutDashboard,
+  Users,
+  LogOut,
+  Menu,
+  X,
+  Home,
+  Mail,
+} from "lucide-react";
 
 interface AdminSidebarProps {
   onLogout: () => void;
@@ -16,14 +24,22 @@ export default function AdminSidebar({
 
   const navItems = [
     {
+      id: "dashboard",
       icon: <LayoutDashboard className="w-5 h-5" />,
       label: "Dashboard",
       path: "/admin/dashboard",
     },
     {
+      id: "users",
       icon: <Users className="w-5 h-5" />,
       label: "Users",
       path: "/admin/dashboard",
+    },
+    {
+      id: "contacts",
+      icon: <Mail className="w-5 h-5" />,
+      label: "Contacts",
+      path: "/admin/contacts",
     },
   ];
 
@@ -83,7 +99,7 @@ export default function AdminSidebar({
           <div className="px-3 py-6 space-y-2">
             {navItems.map((item) => (
               <Link
-                key={item.path}
+                key={item.id}
                 to={item.path}
                 onClick={handleLinkClick}
                 className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${

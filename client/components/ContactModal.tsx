@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, CheckCircle, X } from "lucide-react";
+import { ArrowRight, CheckCircle, X, AlertCircle } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -7,6 +7,8 @@ import {
   DialogTitle,
   DialogClose,
 } from "@/components/ui/dialog";
+import { submitContact } from "@/lib/contacts";
+import { useToast } from "@/hooks/use-toast";
 
 interface ContactModalProps {
   open: boolean;
@@ -17,6 +19,7 @@ export default function ContactModal({
   open,
   onOpenChange,
 }: ContactModalProps) {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -25,6 +28,8 @@ export default function ContactModal({
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -33,16 +38,45 @@ export default function ContactModal({
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    setError(null);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
-      onOpenChange(false);
-    }, 2000);
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      await submitContact(formData);
+      setSubmitted(true);
+      toast({
+        title: "Success",
+        description: "Your message has been sent successfully!",
+      });
+      setTimeout(() => {
+        setSubmitted(false);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
+        onOpenChange(false);
+      }, 2000);
+    } catch (err) {
+      const errorMessage =
+        err instanceof Error ? err.message : "Failed to send message";
+      setError(errorMessage);
+      console.error("Error submitting contact:", err);
+      toast({
+        title: "Error",
+        description: errorMessage,
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -72,6 +106,16 @@ export default function ContactModal({
                 <p className="text-sm text-green-700">
                   Thank you for reaching out. We'll be in touch shortly.
                 </p>
+              </div>
+            </div>
+          )}
+
+          {error && (
+            <div className="p-4 rounded-lg bg-red-50 border border-red-200 flex items-center gap-3 animate-slide-in-down">
+              <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0" />
+              <div>
+                <h4 className="font-semibold text-red-900">Error</h4>
+                <p className="text-sm text-red-700">{error}</p>
               </div>
             </div>
           )}
@@ -161,10 +205,13 @@ export default function ContactModal({
 
           <button
             type="submit"
-            className="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:shadow-lg hover:shadow-primary/40 transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center gap-2 group"
+            disabled={isLoading}
+            className="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:shadow-lg hover:shadow-primary/40 transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none disabled:hover:translate-y-0"
           >
-            Send Message
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            {isLoading ? "Sending..." : "Send Message"}
+            {!isLoading && (
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            )}
           </button>
 
           <p className="text-xs text-muted-foreground text-center">

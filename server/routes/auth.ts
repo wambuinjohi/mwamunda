@@ -3,6 +3,21 @@ import crypto from "crypto";
 
 const API_URL = "https://mwamunda.ziratech.com/api.php";
 
+interface ContactData {
+  name: string;
+  email: string;
+  phone?: string;
+  subject: string;
+  message: string;
+}
+
+interface ContactResponse {
+  success: boolean;
+  message: string;
+  id?: number;
+  error?: string;
+}
+
 // Hash password
 function hashPassword(password: string): string {
   return crypto.createHash("sha256").update(password).digest("hex");
@@ -34,7 +49,15 @@ export const initializeUsersTable: RequestHandler = async (req, res) => {
     const data = await response.json();
     res.json(data);
   } catch (error) {
-    res.status(500).json({ error: "Failed to initialize users table" });
+    const errorMessage =
+      error instanceof Error ? error.message : "Unknown error";
+    console.error("initializeUsersTable error:", errorMessage);
+    res
+      .status(500)
+      .json({
+        error: "Failed to initialize users table",
+        details: errorMessage,
+      });
   }
 };
 
@@ -68,7 +91,7 @@ export const registerUser: RequestHandler = async (req, res) => {
 
     const data = await response.json();
 
-    if (data.success) {
+    if (data.success || data.id) {
       res.json({
         success: true,
         message: "User registered successfully",
@@ -78,7 +101,12 @@ export const registerUser: RequestHandler = async (req, res) => {
       res.status(400).json({ error: data.error || "Failed to register user" });
     }
   } catch (error) {
-    res.status(500).json({ error: "Registration failed" });
+    const errorMessage =
+      error instanceof Error ? error.message : "Unknown error";
+    console.error("registerUser error:", errorMessage);
+    res
+      .status(500)
+      .json({ error: "Registration failed", details: errorMessage });
   }
 };
 
@@ -123,7 +151,10 @@ export const loginUser: RequestHandler = async (req, res) => {
       ),
     });
   } catch (error) {
-    res.status(500).json({ error: "Login failed" });
+    const errorMessage =
+      error instanceof Error ? error.message : "Unknown error";
+    console.error("loginUser error:", errorMessage);
+    res.status(500).json({ error: "Login failed", details: errorMessage });
   }
 };
 
@@ -148,7 +179,12 @@ export const getUser: RequestHandler = async (req, res) => {
       res.status(404).json({ error: "User not found" });
     }
   } catch (error) {
-    res.status(500).json({ error: "Failed to fetch user" });
+    const errorMessage =
+      error instanceof Error ? error.message : "Unknown error";
+    console.error("getUser error:", errorMessage);
+    res
+      .status(500)
+      .json({ error: "Failed to fetch user", details: errorMessage });
   }
 };
 
@@ -162,7 +198,23 @@ export const getAllUsers: RequestHandler = async (req, res) => {
       },
     });
 
+    if (!response.ok) {
+      throw new Error(`API returned status ${response.status}`);
+    }
+
     const users = await response.json();
+
+    // Handle case where API returns an error message
+    if (typeof users === "object" && users.error) {
+      res.status(500).json({ error: users.error });
+      return;
+    }
+
+    // Ensure users is an array
+    if (!Array.isArray(users)) {
+      res.json([]);
+      return;
+    }
 
     // Remove passwords
     const usersWithoutPasswords = users.map((u: any) => {
@@ -172,7 +224,184 @@ export const getAllUsers: RequestHandler = async (req, res) => {
 
     res.json(usersWithoutPasswords);
   } catch (error) {
-    res.status(500).json({ error: "Failed to fetch users" });
+    const errorMessage =
+      error instanceof Error ? error.message : "Unknown error";
+    console.error("getAllUsers error:", errorMessage);
+    res.status(500).json({
+      error: "Failed to fetch users",
+      details: errorMessage,
+    });
+  }
+};
+
+// Initialize contacts table
+export const initializeContactsTable: RequestHandler = async (req, res) => {
+  try {
+    const response = await fetch(API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        table: "contacts",
+        action: "create_table",
+        columns: {
+          name: "VARCHAR(255) NOT NULL",
+          email: "VARCHAR(255) NOT NULL",
+          phone: "VARCHAR(50)",
+          subject: "VARCHAR(255) NOT NULL",
+          message: "TEXT NOT NULL",
+          status: "VARCHAR(50) DEFAULT 'new'",
+          created_at: "TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
+          updated_at:
+            "TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP",
+        },
+      }),
+    });
+
+    const data = await response.json();
+    res.json(data);
+  } catch (error) {
+    const errorMessage =
+      error instanceof Error ? error.message : "Unknown error";
+    console.error("initializeContactsTable error:", errorMessage);
+    res
+      .status(500)
+      .json({
+        error: "Failed to initialize contacts table",
+        details: errorMessage,
+      });
+  }
+};
+
+// Save contact submission
+export const submitContact: RequestHandler = async (req, res) => {
+  try {
+    const { name, email, phone, subject, message } = req.body as ContactData;
+
+    if (!name || !email || !subject || !message) {
+      res.status(400).json({ error: "Missing required fields" });
+      return;
+    }
+
+    const response = await fetch(API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        table: "contacts",
+        data: {
+          name,
+          email,
+          phone: phone || null,
+          subject,
+          message,
+          status: "new",
+        },
+      }),
+    });
+
+    const data = await response.json();
+
+    if (data.success || data.id) {
+      res.json({
+        success: true,
+        message: "Contact submission saved successfully",
+        id: data.id,
+      });
+    } else {
+      res.status(400).json({ error: data.error || "Failed to save contact" });
+    }
+  } catch (error) {
+    const errorMessage =
+      error instanceof Error ? error.message : "Unknown error";
+    console.error("submitContact error:", errorMessage);
+    res.status(500).json({
+      error: "Failed to submit contact",
+      details: errorMessage,
+    });
+  }
+};
+
+// Get all contacts (admin only)
+export const getAllContacts: RequestHandler = async (req, res) => {
+  try {
+    const response = await fetch(`${API_URL}?table=contacts`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`API returned status ${response.status}`);
+    }
+
+    const contacts = await response.json();
+
+    if (typeof contacts === "object" && contacts.error) {
+      res.status(500).json({ error: contacts.error });
+      return;
+    }
+
+    if (!Array.isArray(contacts)) {
+      res.json([]);
+      return;
+    }
+
+    res.json(contacts);
+  } catch (error) {
+    const errorMessage =
+      error instanceof Error ? error.message : "Unknown error";
+    console.error("getAllContacts error:", errorMessage);
+    res.status(500).json({
+      error: "Failed to fetch contacts",
+      details: errorMessage,
+    });
+  }
+};
+
+// Update contact status (admin only)
+export const updateContactStatus: RequestHandler = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { status } = req.body;
+
+    if (!id || !status) {
+      res.status(400).json({ error: "Missing id or status" });
+      return;
+    }
+
+    const response = await fetch(API_URL, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        table: "contacts",
+        id: parseInt(id),
+        data: { status },
+      }),
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      res.json({
+        success: true,
+        message: "Contact status updated",
+      });
+    } else {
+      res.status(400).json({ error: data.error || "Failed to update status" });
+    }
+  } catch (error) {
+    const errorMessage =
+      error instanceof Error ? error.message : "Unknown error";
+    console.error("updateContactStatus error:", errorMessage);
+    res
+      .status(500)
+      .json({ error: "Failed to update status", details: errorMessage });
   }
 };
 
@@ -204,7 +433,34 @@ export const setupSystem: RequestHandler = async (req, res) => {
     const tableData = await tableRes.json();
     console.log("Table initialization response:", tableData);
 
-    // Step 2: Seed admin user
+    // Step 2: Initialize contacts table
+    console.log("Initializing contacts table...");
+    const contactsTableRes = await fetch(API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        table: "contacts",
+        action: "create_table",
+        columns: {
+          name: "VARCHAR(255) NOT NULL",
+          email: "VARCHAR(255) NOT NULL",
+          phone: "VARCHAR(50)",
+          subject: "VARCHAR(255) NOT NULL",
+          message: "TEXT NOT NULL",
+          status: "VARCHAR(50) DEFAULT 'new'",
+          created_at: "TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
+          updated_at:
+            "TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP",
+        },
+      }),
+    });
+
+    const contactsTableData = await contactsTableRes.json();
+    console.log("Contacts table initialization response:", contactsTableData);
+
+    // Step 3: Seed admin user
     console.log("Seeding admin user...");
     const adminEmail = "admin@mwamunda.com";
     const adminPassword = "Pass123";
@@ -232,7 +488,10 @@ export const setupSystem: RequestHandler = async (req, res) => {
     res.json({
       success: true,
       message: "System setup completed successfully",
-      table: tableData,
+      tables: {
+        users: tableData,
+        contacts: contactsTableData,
+      },
       admin: {
         email: adminEmail,
         message: "Admin user created",
