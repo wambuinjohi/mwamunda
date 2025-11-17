@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import ContactModal from "./ContactModal";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,12 +60,12 @@ export default function Navigation() {
 
           {/* Desktop CTA Button */}
           <div className="hidden md:block">
-            <Link
-              to="/contact"
+            <button
+              onClick={() => setIsContactModalOpen(true)}
               className="px-6 py-2.5 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 transform hover:-translate-y-0.5"
             >
               Get Started
-            </Link>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -88,16 +90,23 @@ export default function Navigation() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              to="/contact"
+            <button
+              onClick={() => {
+                setIsContactModalOpen(true);
+                setIsOpen(false);
+              }}
               className="block w-full px-4 py-2 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-semibold text-center hover:shadow-lg transition-all duration-300"
-              onClick={() => setIsOpen(false)}
             >
               Get Started
-            </Link>
+            </button>
           </div>
         )}
       </div>
+
+      <ContactModal
+        open={isContactModalOpen}
+        onOpenChange={setIsContactModalOpen}
+      />
     </nav>
   );
 }

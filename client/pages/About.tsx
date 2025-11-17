@@ -266,6 +266,68 @@ export default function About() {
         </div>
       </section>
 
+      {/* Team Gallery Section */}
+      <section className="py-20 md:py-32 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl font-bold text-foreground mb-4">
+              Meet Our Team
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Dedicated professionals committed to empowering your business
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-slide-in-left">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F675a5c01881345b88968fcdd971866d7%2F91aa7cdd88b84007a4edf2c0c6affb53?format=webp&width=800"
+                alt="Team member"
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6 bg-white">
+                <h3 className="font-semibold text-foreground mb-1">Our Team</h3>
+                <p className="text-sm text-muted-foreground">
+                  Passionate about your success
+                </p>
+              </div>
+            </div>
+
+            <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-slide-in-up">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F675a5c01881345b88968fcdd971866d7%2F91f7b8b2ff354f5fab960f5d381f1aea?format=webp&width=800"
+                alt="Team collaboration"
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6 bg-white">
+                <h3 className="font-semibold text-foreground mb-1">
+                  Collaboration
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Working together for excellence
+                </p>
+              </div>
+            </div>
+
+            <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-slide-in-right">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F675a5c01881345b88968fcdd971866d7%2Fad24e5fed2864f1b996e081902f22f7b?format=webp&width=800"
+                alt="Team in office"
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6 bg-white">
+                <h3 className="font-semibold text-foreground mb-1">
+                  Professional Service
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Expert guidance every step
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="relative py-20 md:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-90"></div>
