@@ -6,6 +6,9 @@ export interface Contact {
   subject: string;
   message: string;
   status?: string;
+  internal_notes?: string;
+  response_email?: string;
+  response_sent_at?: string;
   created_at?: string;
   updated_at?: string;
 }
