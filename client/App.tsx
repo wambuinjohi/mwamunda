@@ -9,6 +9,10 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
+import FairPersonalLoans from "./pages/products/FairPersonalLoans";
+import ChamaLoans from "./pages/products/ChamaLoans";
+import DebtAdviceServices from "./pages/products/DebtAdviceServices";
+import FinancialCapabilityTraining from "./pages/products/FinancialCapabilityTraining";
 import AdminSetup from "./pages/AdminSetup";
 import AdminInit from "./pages/AdminInit";
 import AdminLogin from "./pages/AdminLogin";
@@ -29,6 +33,10 @@ export const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/products/fair-personal-loans" element={<FairPersonalLoans />} />
+          <Route path="/products/chama-loans" element={<ChamaLoans />} />
+          <Route path="/products/debt-advice-services" element={<DebtAdviceServices />} />
+          <Route path="/products/financial-capability-training" element={<FinancialCapabilityTraining />} />
           <Route path="/admin/setup" element={<AdminSetup />} />
           <Route path="/admin/init" element={<AdminInit />} />
           <Route path="/admin/login" element={<AdminLogin />} />
