@@ -107,7 +107,7 @@ export default function Services() {
           <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div>
               <img
-                src="https://cdn.builder.io/api/v1/image/assets%2Ffbf49e0b8b244100b448033b1a23a70b%2F92cea3121dc44b17903ff04a0698d8d8?format=webp&width=400"
+                src="https://cdn.builder.io/api/v1/image/assets%2F675a5c01881345b88968fcdd971866d7%2F7e6019eab478401686a679312028d4e8?format=webp&width=800"
                 alt="Mwamunda Investment Limited"
                 className="h-32 w-auto mb-4"
               />
