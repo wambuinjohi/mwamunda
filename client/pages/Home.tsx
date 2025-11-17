@@ -139,37 +139,37 @@ export default function Home() {
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
             {[
               {
-                icon: <Shield className="w-8 h-8" />,
+                icon: <Shield className="w-6 sm:w-8 h-6 sm:h-8" />,
                 title: "Trusted Partner",
                 description:
                   "Established micro-credit institution with proven track record in communities across Kenya",
               },
               {
-                icon: <Users className="w-8 h-8" />,
+                icon: <Users className="w-6 sm:w-8 h-6 sm:h-8" />,
                 title: "Community Focused",
                 description:
                   "We understand the unique needs of micro and small businesses and farmers",
               },
               {
-                icon: <Zap className="w-8 h-8" />,
+                icon: <Zap className="w-6 sm:w-8 h-6 sm:h-8" />,
                 title: "Fast Approval",
                 description:
                   "Quick processing and affordable terms designed for those excluded by mainstream finance",
               },
               {
-                icon: <Award className="w-8 h-8" />,
+                icon: <Award className="w-6 sm:w-8 h-6 sm:h-8" />,
                 title: "Expert Team",
                 description:
                   "Experienced board members in investment, microfinance, and product development",
               },
               {
-                icon: <Target className="w-8 h-8" />,
+                icon: <Target className="w-6 sm:w-8 h-6 sm:h-8" />,
                 title: "Field Agents",
                 description:
                   "Our dedicated agents are eager to serve you across every county in Kenya",
               },
               {
-                icon: <CheckCircle className="w-8 h-8" />,
+                icon: <CheckCircle className="w-6 sm:w-8 h-6 sm:h-8" />,
                 title: "Accessible",
                 description:
                   "Honest, affordable financial products for those ignored by predatory lenders",
@@ -177,16 +177,16 @@ export default function Home() {
             ].map((feature, idx) => (
               <div
                 key={idx}
-                className="group p-8 rounded-2xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 animate-slide-in-up"
+                className="group p-5 sm:p-6 md:p-8 rounded-2xl border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 animate-slide-in-up"
                 style={{ animationDelay: `${idx * 0.1}s` }}
               >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-primary group-hover:text-white transition-all duration-300">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-3">
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-foreground mb-2 sm:mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-muted-foreground">{feature.description}</p>
+                <p className="text-xs sm:text-sm md:text-base text-muted-foreground">{feature.description}</p>
               </div>
             ))}
           </div>
