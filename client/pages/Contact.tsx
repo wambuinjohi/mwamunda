@@ -284,9 +284,9 @@ export default function Contact() {
       </section>
 
       {/* Map Section */}
-      <section className="py-20 md:py-32 bg-white">
+      <section className="py-16 sm:py-20 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-foreground text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground text-center mb-8 sm:mb-12">
             Find Us
           </h2>
 
