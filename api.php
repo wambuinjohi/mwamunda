@@ -7,7 +7,7 @@ header("Access-Control-Allow-Headers: Content-Type");
 include "connection.php";
 
 $method = $_SERVER['REQUEST_METHOD'];
-$input  = json_decode(file_get_contents("php://input"), true);
+$input  = json_decode(file_get_get_contents("php://input"), true);
 
 // Action (optional)
 $action = $input['action'] ?? null;
