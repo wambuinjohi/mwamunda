@@ -37,13 +37,13 @@ export default function Contact() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative pt-32 md:pt-40 pb-20 bg-gradient-to-br from-primary/10 to-secondary/10">
+      <section className="relative pt-24 sm:pt-28 md:pt-32 lg:pt-40 pb-16 sm:pb-20 bg-gradient-to-br from-primary/10 to-secondary/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center animate-slide-in-down">
-            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 sm:mb-6">
               Get In Touch
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
               Have questions? We'd love to hear from you. Reach out to our team
               today.
             </p>
