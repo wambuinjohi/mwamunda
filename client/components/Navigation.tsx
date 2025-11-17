@@ -79,12 +79,12 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden pb-4 space-y-2 animate-slide-in-down">
+          <div className="md:hidden pb-3 sm:pb-4 space-y-2 animate-slide-in-down bg-white/95 backdrop-blur-md rounded-b-2xl">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
-                className="block px-4 py-2 rounded-lg text-foreground hover:bg-muted transition-colors"
+                className="block px-3 sm:px-4 py-2.5 rounded-lg text-sm text-foreground hover:bg-muted transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
@@ -95,7 +95,7 @@ export default function Navigation() {
                 setIsContactModalOpen(true);
                 setIsOpen(false);
               }}
-              className="block w-full px-4 py-2 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-semibold text-center hover:shadow-lg transition-all duration-300"
+              className="block w-full mx-3 sm:mx-4 px-3 sm:px-4 py-2.5 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-semibold text-center text-sm hover:shadow-lg transition-all duration-300"
             >
               Get Started
             </button>
