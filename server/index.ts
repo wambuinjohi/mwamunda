@@ -8,6 +8,7 @@ import {
   loginUser,
   getUser,
   getAllUsers,
+  setupSystem,
 } from "./routes/auth";
 
 export function createServer() {
@@ -32,6 +33,7 @@ export function createServer() {
   app.post("/api/auth/login", loginUser);
   app.get("/api/auth/user/:id", getUser);
   app.get("/api/auth/users", getAllUsers);
+  app.post("/api/setup", setupSystem);
 
   return app;
 }
