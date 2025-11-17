@@ -27,6 +27,12 @@ export default function AdminSidebar({
       label: "Users",
       path: "/admin/users",
     },
+    {
+      id: "contacts",
+      icon: <Mail className="w-5 h-5" />,
+      label: "Contacts",
+      path: "/admin/contacts",
+    },
   ];
 
   const isActive = (path: string) => location.pathname === path;
