@@ -21,7 +21,10 @@ const NotFound = () => {
       <section className="relative pt-32 md:pt-40 pb-20 flex items-center justify-center min-h-[calc(100vh-120px)]">
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute w-96 h-96 bg-primary/10 rounded-full blur-3xl top-20 left-10 animate-float"></div>
-          <div className="absolute w-96 h-96 bg-secondary/10 rounded-full blur-3xl bottom-20 right-10 animate-float" style={{ animationDelay: "1s" }}></div>
+          <div
+            className="absolute w-96 h-96 bg-secondary/10 rounded-full blur-3xl bottom-20 right-10 animate-float"
+            style={{ animationDelay: "1s" }}
+          ></div>
         </div>
 
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
@@ -37,11 +40,18 @@ const NotFound = () => {
             Page Not Found
           </h2>
 
-          <p className="text-xl text-muted-foreground mb-12 animate-slide-in-up" style={{ animationDelay: "0.1s" }}>
-            We couldn't find the page you're looking for. It might have been moved or deleted.
+          <p
+            className="text-xl text-muted-foreground mb-12 animate-slide-in-up"
+            style={{ animationDelay: "0.1s" }}
+          >
+            We couldn't find the page you're looking for. It might have been
+            moved or deleted.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-in-up" style={{ animationDelay: "0.2s" }}>
+          <div
+            className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-in-up"
+            style={{ animationDelay: "0.2s" }}
+          >
             <Link
               to="/"
               className="px-8 py-4 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:shadow-lg hover:shadow-primary/40 transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 group"
@@ -60,7 +70,13 @@ const NotFound = () => {
           </div>
 
           <p className="mt-12 text-muted-foreground text-sm">
-            Need help? <Link to="/contact" className="text-primary font-semibold hover:underline">Contact our team</Link>
+            Need help?{" "}
+            <Link
+              to="/contact"
+              className="text-primary font-semibold hover:underline"
+            >
+              Contact our team
+            </Link>
           </p>
         </div>
       </section>
@@ -82,10 +98,38 @@ const NotFound = () => {
             <div>
               <h4 className="font-bold text-white mb-4">Quick Links</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/" className="text-white/70 hover:text-white transition-colors">Home</Link></li>
-                <li><Link to="/about" className="text-white/70 hover:text-white transition-colors">About Us</Link></li>
-                <li><Link to="/services" className="text-white/70 hover:text-white transition-colors">Services</Link></li>
-                <li><Link to="/contact" className="text-white/70 hover:text-white transition-colors">Contact</Link></li>
+                <li>
+                  <Link
+                    to="/"
+                    className="text-white/70 hover:text-white transition-colors"
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/about"
+                    className="text-white/70 hover:text-white transition-colors"
+                  >
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services"
+                    className="text-white/70 hover:text-white transition-colors"
+                  >
+                    Services
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/contact"
+                    className="text-white/70 hover:text-white transition-colors"
+                  >
+                    Contact
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -102,12 +146,15 @@ const NotFound = () => {
             <div>
               <h4 className="font-bold text-white mb-4">Contact</h4>
               <p className="text-white/70 text-sm mb-3">
-                <strong>Email:</strong><br />
+                <strong>Email:</strong>
+                <br />
                 info@mwamunda.com
               </p>
               <p className="text-white/70 text-sm">
-                <strong>Phone:</strong><br />
-                0106673939 / 0784222284<br />
+                <strong>Phone:</strong>
+                <br />
+                0106673939 / 0784222284
+                <br />
                 0708192783
               </p>
             </div>

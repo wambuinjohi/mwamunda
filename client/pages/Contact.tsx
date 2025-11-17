@@ -9,13 +9,17 @@ export default function Contact() {
     email: "",
     phone: "",
     subject: "",
-    message: ""
+    message: "",
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -36,9 +40,12 @@ export default function Contact() {
       <section className="relative pt-32 md:pt-40 pb-20 bg-gradient-to-br from-primary/10 to-secondary/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center animate-slide-in-down">
-            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">Get In Touch</h1>
+            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6">
+              Get In Touch
+            </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Have questions? We'd love to hear from you. Reach out to our team today.
+              Have questions? We'd love to hear from you. Reach out to our team
+              today.
             </p>
           </div>
         </div>
@@ -54,10 +61,16 @@ export default function Contact() {
                 <Mail className="w-6 h-6" />
               </div>
               <h3 className="text-lg font-bold text-foreground mb-2">Email</h3>
-              <a href="mailto:info@mwamunda.com" className="text-primary hover:underline mb-2 block">
+              <a
+                href="mailto:info@mwamunda.com"
+                className="text-primary hover:underline mb-2 block"
+              >
                 info@mwamunda.com
               </a>
-              <a href="mailto:mwamundainvestment@gmail.com" className="text-primary hover:underline block">
+              <a
+                href="mailto:mwamundainvestment@gmail.com"
+                className="text-primary hover:underline block"
+              >
                 Mwamundainvestment@gmail.com
               </a>
               <p className="text-muted-foreground text-sm mt-4">
@@ -66,19 +79,33 @@ export default function Contact() {
             </div>
 
             {/* Phone */}
-            <div className="text-center p-8 rounded-2xl border border-border hover:border-secondary/50 hover:shadow-lg transition-all duration-300 animate-slide-in-up" style={{ animationDelay: "0.1s" }}>
+            <div
+              className="text-center p-8 rounded-2xl border border-border hover:border-secondary/50 hover:shadow-lg transition-all duration-300 animate-slide-in-up"
+              style={{ animationDelay: "0.1s" }}
+            >
               <div className="w-12 h-12 rounded-lg bg-secondary/20 text-secondary flex items-center justify-center mx-auto mb-4">
                 <Phone className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-foreground mb-4">Phone & WhatsApp</h3>
+              <h3 className="text-lg font-bold text-foreground mb-4">
+                Phone & WhatsApp
+              </h3>
               <div className="space-y-2">
-                <a href="tel:+254106673939" className="text-primary hover:underline block font-semibold">
+                <a
+                  href="tel:+254106673939"
+                  className="text-primary hover:underline block font-semibold"
+                >
                   0106673939
                 </a>
-                <a href="tel:+254784222284" className="text-primary hover:underline block font-semibold">
+                <a
+                  href="tel:+254784222284"
+                  className="text-primary hover:underline block font-semibold"
+                >
                   0784222284
                 </a>
-                <a href="tel:+254708192783" className="text-primary hover:underline block font-semibold">
+                <a
+                  href="tel:+254708192783"
+                  className="text-primary hover:underline block font-semibold"
+                >
                   0708192783
                 </a>
               </div>
@@ -88,15 +115,23 @@ export default function Contact() {
             </div>
 
             {/* Address */}
-            <div className="text-center p-8 rounded-2xl border border-border hover:border-accent/50 hover:shadow-lg transition-all duration-300 animate-slide-in-up" style={{ animationDelay: "0.2s" }}>
+            <div
+              className="text-center p-8 rounded-2xl border border-border hover:border-accent/50 hover:shadow-lg transition-all duration-300 animate-slide-in-up"
+              style={{ animationDelay: "0.2s" }}
+            >
               <div className="w-12 h-12 rounded-lg bg-accent/20 text-accent flex items-center justify-center mx-auto mb-4">
                 <MapPin className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-foreground mb-4">Head Office</h3>
+              <h3 className="text-lg font-bold text-foreground mb-4">
+                Head Office
+              </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Hussein Mayai Road<br />
+                Hussein Mayai Road
+                <br />
                 Opposite Kadzomba Plaza, Room 8<br />
-                Kilifi, Kenya<br /><br />
+                Kilifi, Kenya
+                <br />
+                <br />
                 <strong className="text-foreground">P.O. Box 964</strong>
               </p>
             </div>
@@ -104,12 +139,16 @@ export default function Contact() {
 
           {/* Alternative Location */}
           <div className="mb-20 p-8 rounded-2xl bg-gradient-to-br from-blue-50 to-teal-50 border border-primary/20 animate-fade-in">
-            <h3 className="text-2xl font-bold text-foreground mb-4">Kilifi Branch Office</h3>
+            <h3 className="text-2xl font-bold text-foreground mb-4">
+              Kilifi Branch Office
+            </h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              <strong className="text-foreground">Address:</strong> Edrine's Plaza Building, Ground Floor, Po.box 964 Kilifi
+              <strong className="text-foreground">Address:</strong> Edrine's
+              Plaza Building, Ground Floor, Po.box 964 Kilifi
             </p>
             <p className="text-muted-foreground">
-              <strong className="text-foreground">Phone:</strong> 0708192783 / 0784222284
+              <strong className="text-foreground">Phone:</strong> 0708192783 /
+              0784222284
             </p>
           </div>
         </div>
@@ -119,26 +158,38 @@ export default function Contact() {
       <section className="py-20 md:py-32 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-slide-in-down">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Send Us a Message</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-4">
+              Send Us a Message
+            </h2>
             <p className="text-lg text-muted-foreground">
-              Fill out the form below and we'll get back to you as soon as possible
+              Fill out the form below and we'll get back to you as soon as
+              possible
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6 animate-slide-in-up">
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-6 animate-slide-in-up"
+          >
             {submitted && (
               <div className="p-6 rounded-xl bg-green-50 border border-green-200 flex items-center gap-3 animate-slide-in-down">
                 <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
                 <div>
-                  <h4 className="font-semibold text-green-900">Message Sent!</h4>
-                  <p className="text-sm text-green-700">Thank you for reaching out. We'll be in touch shortly.</p>
+                  <h4 className="font-semibold text-green-900">
+                    Message Sent!
+                  </h4>
+                  <p className="text-sm text-green-700">
+                    Thank you for reaching out. We'll be in touch shortly.
+                  </p>
                 </div>
               </div>
             )}
 
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-semibold text-foreground mb-2">Full Name *</label>
+                <label className="block text-sm font-semibold text-foreground mb-2">
+                  Full Name *
+                </label>
                 <input
                   type="text"
                   name="name"
@@ -151,7 +202,9 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-foreground mb-2">Email Address *</label>
+                <label className="block text-sm font-semibold text-foreground mb-2">
+                  Email Address *
+                </label>
                 <input
                   type="email"
                   name="email"
@@ -166,7 +219,9 @@ export default function Contact() {
 
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-semibold text-foreground mb-2">Phone Number</label>
+                <label className="block text-sm font-semibold text-foreground mb-2">
+                  Phone Number
+                </label>
                 <input
                   type="tel"
                   name="phone"
@@ -178,7 +233,9 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-foreground mb-2">Subject *</label>
+                <label className="block text-sm font-semibold text-foreground mb-2">
+                  Subject *
+                </label>
                 <select
                   name="subject"
                   value={formData.subject}
@@ -197,7 +254,9 @@ export default function Contact() {
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-foreground mb-2">Message *</label>
+              <label className="block text-sm font-semibold text-foreground mb-2">
+                Message *
+              </label>
               <textarea
                 name="message"
                 value={formData.message}
@@ -227,8 +286,10 @@ export default function Contact() {
       {/* Map Section */}
       <section className="py-20 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-foreground text-center mb-12">Find Us</h2>
-          
+          <h2 className="text-3xl font-bold text-foreground text-center mb-12">
+            Find Us
+          </h2>
+
           <div className="rounded-2xl overflow-hidden border border-border h-96 md:h-96 animate-fade-in">
             <iframe
               width="100%"
@@ -241,7 +302,8 @@ export default function Contact() {
           </div>
 
           <p className="text-center text-muted-foreground text-sm mt-8">
-            Located in Kilifi, Kenya. We serve all 47 counties with field agents.
+            Located in Kilifi, Kenya. We serve all 47 counties with field
+            agents.
           </p>
         </div>
       </section>
@@ -249,41 +311,45 @@ export default function Contact() {
       {/* Additional Info */}
       <section className="py-20 md:py-32 bg-gradient-to-b from-blue-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-foreground text-center mb-12">Why Get In Touch?</h2>
+          <h2 className="text-3xl font-bold text-foreground text-center mb-12">
+            Why Get In Touch?
+          </h2>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 title: "Loan Inquiries",
-                desc: "Whether you're interested in a personal loan or chama loan, our team can guide you through the process"
+                desc: "Whether you're interested in a personal loan or chama loan, our team can guide you through the process",
               },
               {
                 title: "Schedule a Visit",
-                desc: "Request a visit from one of our field agents or arrange to visit a branch office near you"
+                desc: "Request a visit from one of our field agents or arrange to visit a branch office near you",
               },
               {
                 title: "Partnerships",
-                desc: "Interested in partnering with us? We'd love to explore opportunities together"
+                desc: "Interested in partnering with us? We'd love to explore opportunities together",
               },
               {
                 title: "Debt Advice",
-                desc: "Struggling with debt? Our financial advisors can help you develop a better strategy"
+                desc: "Struggling with debt? Our financial advisors can help you develop a better strategy",
               },
               {
                 title: "Capacity Building",
-                desc: "Learn about our training programs and financial capability services"
+                desc: "Learn about our training programs and financial capability services",
               },
               {
                 title: "Business Support",
-                desc: "Get expert advice on growing your business with our microfinance solutions"
-              }
+                desc: "Get expert advice on growing your business with our microfinance solutions",
+              },
             ].map((item, idx) => (
               <div
                 key={idx}
                 className="p-6 rounded-xl border border-border hover:border-primary/50 hover:shadow-lg transition-all duration-300 animate-slide-in-up"
                 style={{ animationDelay: `${idx * 0.1}s` }}
               >
-                <h3 className="text-lg font-bold text-foreground mb-2">{item.title}</h3>
+                <h3 className="text-lg font-bold text-foreground mb-2">
+                  {item.title}
+                </h3>
                 <p className="text-muted-foreground text-sm">{item.desc}</p>
               </div>
             ))}
@@ -309,10 +375,38 @@ export default function Contact() {
             <div>
               <h4 className="font-bold text-white mb-4">Quick Links</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/" className="text-white/70 hover:text-white transition-colors">Home</Link></li>
-                <li><Link to="/about" className="text-white/70 hover:text-white transition-colors">About Us</Link></li>
-                <li><Link to="/services" className="text-white/70 hover:text-white transition-colors">Services</Link></li>
-                <li><Link to="/contact" className="text-white/70 hover:text-white transition-colors">Contact</Link></li>
+                <li>
+                  <Link
+                    to="/"
+                    className="text-white/70 hover:text-white transition-colors"
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/about"
+                    className="text-white/70 hover:text-white transition-colors"
+                  >
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services"
+                    className="text-white/70 hover:text-white transition-colors"
+                  >
+                    Services
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/contact"
+                    className="text-white/70 hover:text-white transition-colors"
+                  >
+                    Contact
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -329,12 +423,15 @@ export default function Contact() {
             <div>
               <h4 className="font-bold text-white mb-4">Contact</h4>
               <p className="text-white/70 text-sm mb-3">
-                <strong>Email:</strong><br />
+                <strong>Email:</strong>
+                <br />
                 info@mwamunda.com
               </p>
               <p className="text-white/70 text-sm">
-                <strong>Phone:</strong><br />
-                0106673939 / 0784222284<br />
+                <strong>Phone:</strong>
+                <br />
+                0106673939 / 0784222284
+                <br />
                 0708192783
               </p>
             </div>
