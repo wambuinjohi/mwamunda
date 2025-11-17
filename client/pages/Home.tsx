@@ -9,6 +9,8 @@ import {
   Shield,
   Award,
   Target,
+  LifeBuoy,
+  BookOpen,
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 
@@ -287,6 +289,84 @@ export default function Home() {
                 <Link
                   to="/contact"
                   className="inline-flex items-center gap-2 text-secondary font-semibold text-sm hover:gap-3 transition-all group/link"
+                >
+                  Learn More
+                  <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 group-hover/link:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            </div>
+
+            <div className="group rounded-3xl overflow-hidden border border-border hover:border-blue-500/50 transition-all duration-300 animate-slide-in-left">
+              <div className="h-40 sm:h-48 bg-gradient-to-br from-blue-500/20 to-blue-500/5 flex items-center justify-center group-hover:from-blue-500/30 transition-all duration-300">
+                <LifeBuoy className="w-16 sm:w-24 h-16 sm:h-24 text-blue-500/40 group-hover:text-blue-500/60 transition-colors" />
+              </div>
+              <div className="p-5 sm:p-6 md:p-8">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-3 sm:mb-4">
+                  Debt Advice Services
+                </h3>
+                <p className="text-xs sm:text-sm md:text-base text-muted-foreground mb-5 sm:mb-6 leading-relaxed">
+                  Expert guidance and support to help you manage and overcome
+                  debt challenges. Our advisors provide personalized strategies
+                  to improve your financial health.
+                </p>
+                <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
+                  {[
+                    "Expert debt counseling",
+                    "Personalized repayment plans",
+                    "Financial health assessment",
+                    "Ongoing guidance and support",
+                  ].map((item, i) => (
+                    <li
+                      key={i}
+                      className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-foreground"
+                    >
+                      <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-blue-500 flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 text-blue-500 font-semibold text-sm hover:gap-3 transition-all group/link"
+                >
+                  Learn More
+                  <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 group-hover/link:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+            </div>
+
+            <div className="group rounded-3xl overflow-hidden border border-border hover:border-amber-500/50 transition-all duration-300 animate-slide-in-right">
+              <div className="h-40 sm:h-48 bg-gradient-to-br from-amber-500/20 to-amber-500/5 flex items-center justify-center group-hover:from-amber-500/30 transition-all duration-300">
+                <BookOpen className="w-16 sm:w-24 h-16 sm:h-24 text-amber-500/40 group-hover:text-amber-500/60 transition-colors" />
+              </div>
+              <div className="p-5 sm:p-6 md:p-8">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-3 sm:mb-4">
+                  Financial Capability Training
+                </h3>
+                <p className="text-xs sm:text-sm md:text-base text-muted-foreground mb-5 sm:mb-6 leading-relaxed">
+                  Comprehensive training programs designed to build financial
+                  literacy and empower individuals with essential money
+                  management skills for sustainable success.
+                </p>
+                <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
+                  {[
+                    "Money management basics",
+                    "Budgeting and savings strategies",
+                    "Investment fundamentals",
+                    "Financial planning workshops",
+                  ].map((item, i) => (
+                    <li
+                      key={i}
+                      className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-foreground"
+                    >
+                      <CheckCircle className="w-4 sm:w-5 h-4 sm:h-5 text-amber-500 flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 text-amber-500 font-semibold text-sm hover:gap-3 transition-all group/link"
                 >
                   Learn More
                   <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 group-hover/link:translate-x-1 transition-transform" />
