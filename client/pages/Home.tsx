@@ -118,22 +118,11 @@ export default function Home() {
               <div className="relative w-full h-96 md:h-full min-h-96">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl blur-2xl"></div>
                 <div className="absolute inset-0 rounded-3xl overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-primary/30 to-secondary/30 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="inline-block p-6 bg-white rounded-2xl shadow-xl mb-6">
-                        <TrendingUp
-                          className="w-16 h-16 text-primary animate-bounce"
-                          style={{ animationDelay: "0.1s" }}
-                        />
-                      </div>
-                      <h3 className="text-2xl font-bold text-white">
-                        Growing Together
-                      </h3>
-                      <p className="text-white/80 mt-2">
-                        Your success is our mission
-                      </p>
-                    </div>
-                  </div>
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F675a5c01881345b88968fcdd971866d7%2F5c4477d10db1458d81e223d3d709fb74?format=webp&width=800"
+                    alt="Mwamunda Investment Limited Head Office"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
