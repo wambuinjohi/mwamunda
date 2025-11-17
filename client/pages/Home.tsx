@@ -755,10 +755,16 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="border-t border-white/10 pt-8">
-            <p className="text-center text-white/60 text-sm">
+          <div className="border-t border-white/10 pt-8 flex items-center justify-between">
+            <p className="text-white/60 text-sm">
               &copy; 2024 Mwamunda Investment Limited. All rights reserved.
             </p>
+            <Link
+              to="/admin/login"
+              className="px-4 py-2 rounded-lg bg-white/20 text-white text-sm font-semibold hover:bg-white/30 transition-colors"
+            >
+              Admin Login
+            </Link>
           </div>
         </div>
       </footer>
