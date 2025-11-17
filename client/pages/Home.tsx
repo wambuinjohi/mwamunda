@@ -28,6 +28,13 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative pt-32 md:pt-40 pb-20 md:pb-32 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: `url('https://cdn.builder.io/api/v1/image/assets%2F675a5c01881345b88968fcdd971866d7%2F5c4477d10db1458d81e223d3d709fb74?format=webp&width=800')`,
+              opacity: 0.15,
+            }}
+          ></div>
           <div className="absolute w-96 h-96 bg-primary/10 rounded-full blur-3xl top-20 left-10 animate-float"></div>
           <div
             className="absolute w-96 h-96 bg-secondary/10 rounded-full blur-3xl bottom-20 right-10 animate-float"
