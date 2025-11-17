@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, CheckCircle, X } from "lucide-react";
+import { ArrowRight, CheckCircle, X, AlertCircle } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -7,6 +7,8 @@ import {
   DialogTitle,
   DialogClose,
 } from "@/components/ui/dialog";
+import { submitContact } from "@/lib/contacts";
+import { useToast } from "@/hooks/use-toast";
 
 interface ContactModalProps {
   open: boolean;
