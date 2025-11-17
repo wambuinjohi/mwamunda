@@ -46,6 +46,9 @@ export function createServer() {
   app.post("/api/contacts", submitContact);
   app.get("/api/contacts", getAllContacts);
   app.put("/api/contacts/:id", updateContactStatus);
+  app.delete("/api/contacts/:id", deleteContact);
+  app.put("/api/contacts/:id/notes", addInternalNotes);
+  app.post("/api/contacts/:id/respond", sendResponseEmail);
 
   // Setup route
   app.post("/api/setup", setupSystem);
