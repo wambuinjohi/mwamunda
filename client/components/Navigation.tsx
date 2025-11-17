@@ -60,12 +60,12 @@ export default function Navigation() {
 
           {/* Desktop CTA Button */}
           <div className="hidden md:block">
-            <Link
-              to="/contact"
+            <button
+              onClick={() => setIsContactModalOpen(true)}
               className="px-6 py-2.5 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 transform hover:-translate-y-0.5"
             >
               Get Started
-            </Link>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
