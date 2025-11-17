@@ -15,6 +15,8 @@ export default function AdminContacts() {
   const [selectedContact, setSelectedContact] = useState<Contact | null>(null);
   const [showDetails, setShowDetails] = useState(false);
   const [filter, setFilter] = useState<string>("all");
+  const [internalNote, setInternalNote] = useState<string>("");
+  const [responseEmail, setResponseEmail] = useState<string>("");
 
   // Redirect if not logged in
   useEffect(() => {
