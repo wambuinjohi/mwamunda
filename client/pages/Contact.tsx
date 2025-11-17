@@ -56,76 +56,76 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-20">
             {/* Email */}
-            <div className="text-center p-8 rounded-2xl border border-border hover:border-primary/50 hover:shadow-lg transition-all duration-300 animate-slide-in-up">
-              <div className="w-12 h-12 rounded-lg bg-primary/20 text-primary flex items-center justify-center mx-auto mb-4">
-                <Mail className="w-6 h-6" />
+            <div className="text-center p-5 sm:p-6 md:p-8 rounded-2xl border border-border hover:border-primary/50 hover:shadow-lg transition-all duration-300 animate-slide-in-up">
+              <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg bg-primary/20 text-primary flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <Mail className="w-5 sm:w-6 h-5 sm:h-6" />
               </div>
-              <h3 className="text-lg font-bold text-foreground mb-2">Email</h3>
+              <h3 className="text-base sm:text-lg font-bold text-foreground mb-2">Email</h3>
               <a
                 href="mailto:info@mwamunda.com"
-                className="text-primary hover:underline mb-2 block"
+                className="text-primary hover:underline mb-2 block text-xs sm:text-sm break-all"
               >
                 info@mwamunda.com
               </a>
               <a
                 href="mailto:mwamundainvestment@gmail.com"
-                className="text-primary hover:underline block"
+                className="text-primary hover:underline block text-xs sm:text-sm break-all"
               >
                 Mwamundainvestment@gmail.com
               </a>
-              <p className="text-muted-foreground text-sm mt-4">
+              <p className="text-muted-foreground text-xs sm:text-sm mt-3 sm:mt-4">
                 We'll respond within 24 hours
               </p>
             </div>
 
             {/* Phone */}
             <div
-              className="text-center p-8 rounded-2xl border border-border hover:border-secondary/50 hover:shadow-lg transition-all duration-300 animate-slide-in-up"
+              className="text-center p-5 sm:p-6 md:p-8 rounded-2xl border border-border hover:border-secondary/50 hover:shadow-lg transition-all duration-300 animate-slide-in-up"
               style={{ animationDelay: "0.1s" }}
             >
-              <div className="w-12 h-12 rounded-lg bg-secondary/20 text-secondary flex items-center justify-center mx-auto mb-4">
-                <Phone className="w-6 h-6" />
+              <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg bg-secondary/20 text-secondary flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <Phone className="w-5 sm:w-6 h-5 sm:h-6" />
               </div>
-              <h3 className="text-lg font-bold text-foreground mb-4">
+              <h3 className="text-base sm:text-lg font-bold text-foreground mb-3 sm:mb-4">
                 Phone & WhatsApp
               </h3>
               <div className="space-y-2">
                 <a
                   href="tel:+254106673939"
-                  className="text-primary hover:underline block font-semibold"
+                  className="text-primary hover:underline block font-semibold text-xs sm:text-sm"
                 >
                   0106673939
                 </a>
                 <a
                   href="tel:+254784222284"
-                  className="text-primary hover:underline block font-semibold"
+                  className="text-primary hover:underline block font-semibold text-xs sm:text-sm"
                 >
                   0784222284
                 </a>
                 <a
                   href="tel:+254708192783"
-                  className="text-primary hover:underline block font-semibold"
+                  className="text-primary hover:underline block font-semibold text-xs sm:text-sm"
                 >
                   0708192783
                 </a>
               </div>
-              <p className="text-muted-foreground text-sm mt-4">
+              <p className="text-muted-foreground text-xs sm:text-sm mt-3 sm:mt-4">
                 Call / SMS / WhatsApp anytime
               </p>
             </div>
 
             {/* Address */}
             <div
-              className="text-center p-8 rounded-2xl border border-border hover:border-accent/50 hover:shadow-lg transition-all duration-300 animate-slide-in-up"
+              className="text-center p-5 sm:p-6 md:p-8 rounded-2xl border border-border hover:border-accent/50 hover:shadow-lg transition-all duration-300 animate-slide-in-up"
               style={{ animationDelay: "0.2s" }}
             >
-              <div className="w-12 h-12 rounded-lg bg-accent/20 text-accent flex items-center justify-center mx-auto mb-4">
-                <MapPin className="w-6 h-6" />
+              <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg bg-accent/20 text-accent flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                <MapPin className="w-5 sm:w-6 h-5 sm:h-6" />
               </div>
-              <h3 className="text-lg font-bold text-foreground mb-4">
+              <h3 className="text-base sm:text-lg font-bold text-foreground mb-3 sm:mb-4">
                 Head Office
               </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
+              <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed">
                 Hussein Mayai Road
                 <br />
                 Opposite Kadzomba Plaza, Room 8<br />
