@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Mail, Phone, MessageSquare, Trash2, Eye } from "lucide-react";
+import { Mail, Phone, MessageSquare, Trash2, Eye, Copy, Send } from "lucide-react";
 import { getStoredUser, clearUser } from "@/lib/auth";
 import { useToast } from "@/hooks/use-toast";
 import { getAllContacts, Contact, updateContactStatus } from "@/lib/contacts";
