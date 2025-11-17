@@ -252,6 +252,9 @@ export const initializeContactsTable: RequestHandler = async (req, res) => {
           subject: "VARCHAR(255) NOT NULL",
           message: "TEXT NOT NULL",
           status: "VARCHAR(50) DEFAULT 'new'",
+          internal_notes: "TEXT",
+          response_email: "TEXT",
+          response_sent_at: "TIMESTAMP NULL",
           created_at: "TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
           updated_at:
             "TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP",
@@ -614,6 +617,9 @@ export const setupSystem: RequestHandler = async (req, res) => {
           subject: "VARCHAR(255) NOT NULL",
           message: "TEXT NOT NULL",
           status: "VARCHAR(50) DEFAULT 'new'",
+          internal_notes: "TEXT",
+          response_email: "TEXT",
+          response_sent_at: "TIMESTAMP NULL",
           created_at: "TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
           updated_at:
             "TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP",
