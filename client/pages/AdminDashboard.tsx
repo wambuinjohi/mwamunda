@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { LogOut, Users, Plus, Trash2, Eye } from "lucide-react";
+import { Users, Plus, Trash2, Eye } from "lucide-react";
 import { getStoredUser, clearUser, getAllUsers, User } from "@/lib/auth";
 import { useToast } from "@/hooks/use-toast";
-import Navigation from "@/components/Navigation";
+import AdminSidebar from "@/components/AdminSidebar";
 
 export default function AdminDashboard() {
   const navigate = useNavigate();
