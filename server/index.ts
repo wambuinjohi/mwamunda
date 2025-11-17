@@ -9,6 +9,10 @@ import {
   getUser,
   getAllUsers,
   setupSystem,
+  initializeContactsTable,
+  submitContact,
+  getAllContacts,
+  updateContactStatus,
 } from "./routes/auth";
 
 export function createServer() {
