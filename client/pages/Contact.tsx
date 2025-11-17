@@ -52,9 +52,9 @@ export default function Contact() {
       </section>
 
       {/* Contact Info Cards */}
-      <section className="py-20 md:py-32">
+      <section className="py-16 sm:py-20 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8 mb-20">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-20">
             {/* Email */}
             <div className="text-center p-8 rounded-2xl border border-border hover:border-primary/50 hover:shadow-lg transition-all duration-300 animate-slide-in-up">
               <div className="w-12 h-12 rounded-lg bg-primary/20 text-primary flex items-center justify-center mx-auto mb-4">
