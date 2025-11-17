@@ -7,7 +7,9 @@ export default function AdminSetup() {
   const navigate = useNavigate();
   const { toast } = useToast();
   const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
   const [message, setMessage] = useState("");
   const [details, setDetails] = useState<any>(null);
 
@@ -66,7 +68,9 @@ export default function AdminSetup() {
           {/* Header */}
           <div className="bg-gradient-to-r from-primary to-secondary p-8 text-white">
             <h1 className="text-3xl font-bold mb-2">System Setup</h1>
-            <p className="text-white/90">Initialize database and create admin user</p>
+            <p className="text-white/90">
+              Initialize database and create admin user
+            </p>
           </div>
 
           {/* Content */}
