@@ -254,11 +254,12 @@ export default function AdminContacts() {
           </div>
 
           {/* Filter Tabs */}
-          <div className="mb-6 flex gap-2 border-b border-border">
+          <div className="mb-6 flex gap-2 border-b border-border overflow-x-auto">
             {[
               { value: "all", label: "All" },
               { value: "new", label: "New" },
               { value: "in_progress", label: "In Progress" },
+              { value: "responded", label: "Responded" },
               { value: "resolved", label: "Resolved" },
             ].map((tab) => (
               <button
