@@ -1,6 +1,14 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { LayoutDashboard, Users, LogOut, Menu, X, Home, Mail } from "lucide-react";
+import {
+  LayoutDashboard,
+  Users,
+  LogOut,
+  Menu,
+  X,
+  Home,
+  Mail,
+} from "lucide-react";
 
 interface AdminSidebarProps {
   onLogout: () => void;

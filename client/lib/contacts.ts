@@ -19,7 +19,9 @@ export interface ContactResponse {
 
 const API_BASE_URL = "/api/contacts";
 
-export async function submitContact(contact: Contact): Promise<ContactResponse> {
+export async function submitContact(
+  contact: Contact,
+): Promise<ContactResponse> {
   try {
     const response = await fetch(API_BASE_URL, {
       method: "POST",
@@ -47,7 +49,8 @@ export async function submitContact(contact: Contact): Promise<ContactResponse> 
 
     return data;
   } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : "Failed to submit contact";
+    const errorMessage =
+      error instanceof Error ? error.message : "Failed to submit contact";
     console.error("Error submitting contact:", error);
     throw new Error(errorMessage);
   }
@@ -79,7 +82,8 @@ export async function getAllContacts(): Promise<Contact[]> {
 
     return data;
   } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : "Failed to fetch contacts";
+    const errorMessage =
+      error instanceof Error ? error.message : "Failed to fetch contacts";
     console.error("Error fetching contacts:", error);
     throw new Error(errorMessage);
   }
@@ -110,7 +114,10 @@ export async function updateContactStatus(
 
     return data;
   } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : "Failed to update contact status";
+    const errorMessage =
+      error instanceof Error
+        ? error.message
+        : "Failed to update contact status";
     console.error("Error updating contact status:", error);
     throw new Error(errorMessage);
   }

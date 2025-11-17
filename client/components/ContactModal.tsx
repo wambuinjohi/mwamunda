@@ -55,11 +55,18 @@ export default function ContactModal({
       });
       setTimeout(() => {
         setSubmitted(false);
-        setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
         onOpenChange(false);
       }, 2000);
     } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : "Failed to send message";
+      const errorMessage =
+        err instanceof Error ? err.message : "Failed to send message";
       setError(errorMessage);
       console.error("Error submitting contact:", err);
       toast({
@@ -202,7 +209,9 @@ export default function ContactModal({
             className="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-semibold hover:shadow-lg hover:shadow-primary/40 transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none disabled:hover:translate-y-0"
           >
             {isLoading ? "Sending..." : "Send Message"}
-            {!isLoading && <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />}
+            {!isLoading && (
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            )}
           </button>
 
           <p className="text-xs text-muted-foreground text-center">

@@ -11,6 +11,7 @@ This directory contains the PHP backend files for the Mwamunda Investment Limite
 ## Current Architecture
 
 The Node.js/Express frontend calls the **external PHP API** at:
+
 ```
 https://mwamunda.ziratech.com/api.php
 ```
@@ -42,6 +43,7 @@ USE mwamunda;
 ### 3. Test Locally (Optional)
 
 If testing locally with XAMPP/WAMP:
+
 1. Copy `api.php` and `connection.php` to your local web root
 2. Update `connection.php` with local database credentials
 3. Access via: `http://localhost/api.php?table=users`
@@ -51,6 +53,7 @@ If testing locally with XAMPP/WAMP:
 ### Step 1: Upload Files
 
 Upload to your live server's public directory:
+
 - `api.php`
 - `connection.php`
 
@@ -101,6 +104,7 @@ Content-Type: application/json
 ```
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -111,16 +115,19 @@ Content-Type: application/json
 ### 2. READ (GET)
 
 Get all records:
+
 ```http
 GET /api.php?table=users
 ```
 
 Get single record:
+
 ```http
 GET /api.php?table=users&id=1
 ```
 
 **Response:**
+
 ```json
 [
   {
@@ -151,6 +158,7 @@ Content-Type: application/json
 ```
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -175,6 +183,7 @@ Content-Type: application/json
 ```
 
 **Response:**
+
 ```json
 {
   "success": true
@@ -188,6 +197,7 @@ DELETE /api.php?table=users&id=1
 ```
 
 **Response:**
+
 ```json
 {
   "success": true
@@ -197,28 +207,30 @@ DELETE /api.php?table=users&id=1
 ## Database Tables
 
 ### users
-| Column | Type | Notes |
-|--------|------|-------|
-| id | INT AUTO_INCREMENT PRIMARY KEY | |
-| email | VARCHAR(255) UNIQUE NOT NULL | |
-| password | VARCHAR(255) NOT NULL | SHA256 hashed |
-| name | VARCHAR(255) | |
-| role | VARCHAR(50) | 'admin' or 'user' |
-| created_at | TIMESTAMP DEFAULT CURRENT_TIMESTAMP | |
-| updated_at | TIMESTAMP | Auto-updated |
+
+| Column     | Type                                | Notes             |
+| ---------- | ----------------------------------- | ----------------- |
+| id         | INT AUTO_INCREMENT PRIMARY KEY      |                   |
+| email      | VARCHAR(255) UNIQUE NOT NULL        |                   |
+| password   | VARCHAR(255) NOT NULL               | SHA256 hashed     |
+| name       | VARCHAR(255)                        |                   |
+| role       | VARCHAR(50)                         | 'admin' or 'user' |
+| created_at | TIMESTAMP DEFAULT CURRENT_TIMESTAMP |                   |
+| updated_at | TIMESTAMP                           | Auto-updated      |
 
 ### contacts
-| Column | Type | Notes |
-|--------|------|-------|
-| id | INT AUTO_INCREMENT PRIMARY KEY | |
-| name | VARCHAR(255) NOT NULL | Contact person name |
-| email | VARCHAR(255) NOT NULL | Contact email |
-| phone | VARCHAR(50) | Optional phone number |
-| subject | VARCHAR(255) NOT NULL | Contact subject |
-| message | TEXT NOT NULL | Contact message |
-| status | VARCHAR(50) | 'new', 'in_progress', 'resolved' |
-| created_at | TIMESTAMP DEFAULT CURRENT_TIMESTAMP | |
-| updated_at | TIMESTAMP | Auto-updated |
+
+| Column     | Type                                | Notes                            |
+| ---------- | ----------------------------------- | -------------------------------- |
+| id         | INT AUTO_INCREMENT PRIMARY KEY      |                                  |
+| name       | VARCHAR(255) NOT NULL               | Contact person name              |
+| email      | VARCHAR(255) NOT NULL               | Contact email                    |
+| phone      | VARCHAR(50)                         | Optional phone number            |
+| subject    | VARCHAR(255) NOT NULL               | Contact subject                  |
+| message    | TEXT NOT NULL                       | Contact message                  |
+| status     | VARCHAR(50)                         | 'new', 'in_progress', 'resolved' |
+| created_at | TIMESTAMP DEFAULT CURRENT_TIMESTAMP |                                  |
+| updated_at | TIMESTAMP                           | Auto-updated                     |
 
 ## CORS Configuration
 
@@ -231,6 +243,7 @@ header("Access-Control-Allow-Headers: Content-Type");
 ```
 
 ⚠️ **For Production:** Consider restricting the origin to your domain:
+
 ```php
 header("Access-Control-Allow-Origin: https://your-domain.com");
 ```
@@ -244,6 +257,7 @@ const API_URL = "https://mwamunda.ziratech.com/api.php";
 ```
 
 **To change the API endpoint:**
+
 1. Edit `server/routes/auth.ts`
 2. Update the `API_URL` constant to your new PHP API URL
 3. Restart the dev server
@@ -253,6 +267,7 @@ const API_URL = "https://mwamunda.ziratech.com/api.php";
 All API responses follow standard JSON format:
 
 ### Success Response
+
 ```json
 {
   "success": true,
@@ -262,6 +277,7 @@ All API responses follow standard JSON format:
 ```
 
 ### Error Response
+
 ```json
 {
   "error": "Error message describing what went wrong"
@@ -311,14 +327,17 @@ When you need to update the API:
 ### Common Updates
 
 **Add new table:**
+
 1. Use CREATE TABLE endpoint
 2. Verify in database: `SHOW TABLES;`
 
 **Add new column to existing table:**
+
 1. Use MySQL directly: `ALTER TABLE table_name ADD COLUMN ...;`
 2. Or recreate table with new schema
 
 **Modify API logic:**
+
 1. Edit `api.php` locally
 2. Test all endpoints
 3. Deploy to live server
@@ -326,26 +345,32 @@ When you need to update the API:
 ## Troubleshooting
 
 ### "Table name is required"
+
 - Ensure `table` parameter is passed in request
 
 ### "Failed to fetch users"
+
 - Check if PHP API is reachable
 - Verify database connection in `connection.php`
 - Check server error logs
 
 ### "Data is required" (POST)
+
 - Ensure `data` object is included in request body
 
 ### "Column definitions are required"
+
 - When creating table, include `columns` object
 
 ### CORS errors
+
 - Verify `api.php` has CORS headers
 - Check that request URL matches configured API endpoint
 
 ## Support
 
 For issues or questions:
+
 1. Check the error message in the JSON response
 2. Review server logs for detailed errors
 3. Verify database credentials

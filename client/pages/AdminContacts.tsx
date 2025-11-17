@@ -64,17 +64,18 @@ export default function AdminContacts() {
     setShowDetails(true);
   };
 
-  const handleStatusChange = async (contactId: number | undefined, status: string) => {
+  const handleStatusChange = async (
+    contactId: number | undefined,
+    status: string,
+  ) => {
     if (!contactId) return;
 
     try {
       await updateContactStatus(contactId, status);
       setContacts((prev) =>
-        prev.map((c) => (c.id === contactId ? { ...c, status } : c))
+        prev.map((c) => (c.id === contactId ? { ...c, status } : c)),
       );
-      setSelectedContact((prev) =>
-        prev ? { ...prev, status } : null
-      );
+      setSelectedContact((prev) => (prev ? { ...prev, status } : null));
       toast({
         title: "Success",
         description: "Contact status updated",
@@ -112,7 +113,9 @@ export default function AdminContacts() {
               <h1 className="text-3xl md:text-4xl font-bold mb-2">
                 Contact Submissions
               </h1>
-              <p className="text-white/90">Manage and respond to contact inquiries</p>
+              <p className="text-white/90">
+                Manage and respond to contact inquiries
+              </p>
             </div>
           </div>
         </div>
@@ -284,7 +287,9 @@ export default function AdminContacts() {
                         <td className="px-6 py-4">
                           <p className="text-sm text-muted-foreground">
                             {contact.created_at
-                              ? new Date(contact.created_at).toLocaleDateString()
+                              ? new Date(
+                                  contact.created_at,
+                                ).toLocaleDateString()
                               : "N/A"}
                           </p>
                         </td>
@@ -365,7 +370,9 @@ export default function AdminContacts() {
                     {["new", "in_progress", "resolved"].map((status) => (
                       <button
                         key={status}
-                        onClick={() => handleStatusChange(selectedContact.id, status)}
+                        onClick={() =>
+                          handleStatusChange(selectedContact.id, status)
+                        }
                         className={`px-3 py-1 rounded-full text-xs font-semibold transition-all ${
                           selectedContact.status === status
                             ? status === "new"

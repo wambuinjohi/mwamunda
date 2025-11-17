@@ -49,9 +49,15 @@ export const initializeUsersTable: RequestHandler = async (req, res) => {
     const data = await response.json();
     res.json(data);
   } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : "Unknown error";
+    const errorMessage =
+      error instanceof Error ? error.message : "Unknown error";
     console.error("initializeUsersTable error:", errorMessage);
-    res.status(500).json({ error: "Failed to initialize users table", details: errorMessage });
+    res
+      .status(500)
+      .json({
+        error: "Failed to initialize users table",
+        details: errorMessage,
+      });
   }
 };
 
@@ -95,9 +101,12 @@ export const registerUser: RequestHandler = async (req, res) => {
       res.status(400).json({ error: data.error || "Failed to register user" });
     }
   } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : "Unknown error";
+    const errorMessage =
+      error instanceof Error ? error.message : "Unknown error";
     console.error("registerUser error:", errorMessage);
-    res.status(500).json({ error: "Registration failed", details: errorMessage });
+    res
+      .status(500)
+      .json({ error: "Registration failed", details: errorMessage });
   }
 };
 
@@ -142,7 +151,8 @@ export const loginUser: RequestHandler = async (req, res) => {
       ),
     });
   } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : "Unknown error";
+    const errorMessage =
+      error instanceof Error ? error.message : "Unknown error";
     console.error("loginUser error:", errorMessage);
     res.status(500).json({ error: "Login failed", details: errorMessage });
   }
@@ -169,9 +179,12 @@ export const getUser: RequestHandler = async (req, res) => {
       res.status(404).json({ error: "User not found" });
     }
   } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : "Unknown error";
+    const errorMessage =
+      error instanceof Error ? error.message : "Unknown error";
     console.error("getUser error:", errorMessage);
-    res.status(500).json({ error: "Failed to fetch user", details: errorMessage });
+    res
+      .status(500)
+      .json({ error: "Failed to fetch user", details: errorMessage });
   }
 };
 
@@ -211,7 +224,8 @@ export const getAllUsers: RequestHandler = async (req, res) => {
 
     res.json(usersWithoutPasswords);
   } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : "Unknown error";
+    const errorMessage =
+      error instanceof Error ? error.message : "Unknown error";
     console.error("getAllUsers error:", errorMessage);
     res.status(500).json({
       error: "Failed to fetch users",
@@ -248,9 +262,15 @@ export const initializeContactsTable: RequestHandler = async (req, res) => {
     const data = await response.json();
     res.json(data);
   } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : "Unknown error";
+    const errorMessage =
+      error instanceof Error ? error.message : "Unknown error";
     console.error("initializeContactsTable error:", errorMessage);
-    res.status(500).json({ error: "Failed to initialize contacts table", details: errorMessage });
+    res
+      .status(500)
+      .json({
+        error: "Failed to initialize contacts table",
+        details: errorMessage,
+      });
   }
 };
 
@@ -294,7 +314,8 @@ export const submitContact: RequestHandler = async (req, res) => {
       res.status(400).json({ error: data.error || "Failed to save contact" });
     }
   } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : "Unknown error";
+    const errorMessage =
+      error instanceof Error ? error.message : "Unknown error";
     console.error("submitContact error:", errorMessage);
     res.status(500).json({
       error: "Failed to submit contact",
@@ -331,7 +352,8 @@ export const getAllContacts: RequestHandler = async (req, res) => {
 
     res.json(contacts);
   } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : "Unknown error";
+    const errorMessage =
+      error instanceof Error ? error.message : "Unknown error";
     console.error("getAllContacts error:", errorMessage);
     res.status(500).json({
       error: "Failed to fetch contacts",
@@ -374,9 +396,12 @@ export const updateContactStatus: RequestHandler = async (req, res) => {
       res.status(400).json({ error: data.error || "Failed to update status" });
     }
   } catch (error) {
-    const errorMessage = error instanceof Error ? error.message : "Unknown error";
+    const errorMessage =
+      error instanceof Error ? error.message : "Unknown error";
     console.error("updateContactStatus error:", errorMessage);
-    res.status(500).json({ error: "Failed to update status", details: errorMessage });
+    res
+      .status(500)
+      .json({ error: "Failed to update status", details: errorMessage });
   }
 };
 
