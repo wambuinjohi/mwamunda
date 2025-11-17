@@ -80,14 +80,20 @@ export default function Home() {
                   className="animate-slide-in-up"
                   style={{ animationDelay: "0.1s" }}
                 >
-                  <div className="text-2xl sm:text-3xl font-bold text-primary">2019</div>
-                  <p className="text-xs sm:text-sm text-muted-foreground">Founded</p>
+                  <div className="text-2xl sm:text-3xl font-bold text-primary">
+                    2019
+                  </div>
+                  <p className="text-xs sm:text-sm text-muted-foreground">
+                    Founded
+                  </p>
                 </div>
                 <div
                   className="animate-slide-in-up"
                   style={{ animationDelay: "0.2s" }}
                 >
-                  <div className="text-2xl sm:text-3xl font-bold text-secondary">47+</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-secondary">
+                    47+
+                  </div>
                   <p className="text-xs sm:text-sm text-muted-foreground">
                     Counties Served
                   </p>
@@ -96,7 +102,9 @@ export default function Home() {
                   className="animate-slide-in-up"
                   style={{ animationDelay: "0.3s" }}
                 >
-                  <div className="text-2xl sm:text-3xl font-bold text-accent">1000s</div>
+                  <div className="text-2xl sm:text-3xl font-bold text-accent">
+                    1000s
+                  </div>
                   <p className="text-xs sm:text-sm text-muted-foreground">
                     Families Empowered
                   </p>
@@ -186,7 +194,9 @@ export default function Home() {
                 <h3 className="text-base sm:text-lg md:text-xl font-bold text-foreground mb-2 sm:mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-xs sm:text-sm md:text-base text-muted-foreground">{feature.description}</p>
+                <p className="text-xs sm:text-sm md:text-base text-muted-foreground">
+                  {feature.description}
+                </p>
               </div>
             ))}
           </div>

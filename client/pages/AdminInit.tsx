@@ -33,7 +33,9 @@ export default function AdminInit() {
         }, 2000);
       } else {
         setStatus("error");
-        setMessage(response.message || response.error || "Failed to initialize");
+        setMessage(
+          response.message || response.error || "Failed to initialize",
+        );
         toast({
           title: "Error",
           description:

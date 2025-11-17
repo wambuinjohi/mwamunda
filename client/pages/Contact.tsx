@@ -60,7 +60,9 @@ export default function Contact() {
               <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg bg-primary/20 text-primary flex items-center justify-center mx-auto mb-3 sm:mb-4">
                 <Mail className="w-5 sm:w-6 h-5 sm:h-6" />
               </div>
-              <h3 className="text-base sm:text-lg font-bold text-foreground mb-2">Email</h3>
+              <h3 className="text-base sm:text-lg font-bold text-foreground mb-2">
+                Email
+              </h3>
               <a
                 href="mailto:info@mwamunda.com"
                 className="text-primary hover:underline mb-2 block text-xs sm:text-sm break-all"

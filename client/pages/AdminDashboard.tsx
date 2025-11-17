@@ -76,9 +76,7 @@ export default function AdminDashboard() {
           <div className="flex justify-between items-center flex-col sm:flex-row gap-4">
             <div>
               <h1 className="text-4xl font-bold mb-2">Admin Dashboard</h1>
-              <p className="text-white/90">
-                Welcome back, {currentUser.name}!
-              </p>
+              <p className="text-white/90">Welcome back, {currentUser.name}!</p>
             </div>
             <button
               onClick={handleLogout}
@@ -262,9 +260,7 @@ export default function AdminDashboard() {
 
             <div className="space-y-4 mb-6">
               <div>
-                <p className="text-sm text-muted-foreground font-medium">
-                  ID
-                </p>
+                <p className="text-sm text-muted-foreground font-medium">ID</p>
                 <p className="text-foreground">{selectedUser.id}</p>
               </div>
               <div>
@@ -283,7 +279,9 @@ export default function AdminDashboard() {
                 <p className="text-sm text-muted-foreground font-medium">
                   Role
                 </p>
-                <p className="text-foreground capitalize">{selectedUser.role}</p>
+                <p className="text-foreground capitalize">
+                  {selectedUser.role}
+                </p>
               </div>
               <div>
                 <p className="text-sm text-muted-foreground font-medium">

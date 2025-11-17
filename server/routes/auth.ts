@@ -25,7 +25,8 @@ export const initializeUsersTable: RequestHandler = async (req, res) => {
           name: "VARCHAR(255)",
           role: "VARCHAR(50) DEFAULT 'user'",
           created_at: "TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
-          updated_at: "TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP",
+          updated_at:
+            "TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP",
         },
       }),
     });
@@ -103,7 +104,7 @@ export const loginUser: RequestHandler = async (req, res) => {
 
     // Find user by email
     const user = users.find(
-      (u: any) => u.email === email && u.password === hashPassword(password)
+      (u: any) => u.email === email && u.password === hashPassword(password),
     );
 
     if (!user) {
@@ -117,7 +118,9 @@ export const loginUser: RequestHandler = async (req, res) => {
       success: true,
       message: "Login successful",
       user: userWithoutPassword,
-      token: Buffer.from(JSON.stringify(userWithoutPassword)).toString("base64"),
+      token: Buffer.from(JSON.stringify(userWithoutPassword)).toString(
+        "base64",
+      ),
     });
   } catch (error) {
     res.status(500).json({ error: "Login failed" });

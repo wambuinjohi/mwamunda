@@ -3,14 +3,17 @@
 ## 🚀 Getting Started (3 Steps)
 
 ### Step 1: Initialize Database
+
 Visit: `http://localhost:3000/admin/init`
 
 Click the "Initialize Database" button to create the users table.
 
 ### Step 2: Create Admin Account
+
 Visit: `http://localhost:3000/admin/register`
 
 Fill in:
+
 - Full Name
 - Email
 - Password (min 6 chars)
@@ -19,6 +22,7 @@ Fill in:
 Click "Create Account"
 
 ### Step 3: Login to Dashboard
+
 Visit: `http://localhost:3000/admin/login`
 
 Use the email and password from Step 2
@@ -42,6 +46,7 @@ You're now logged in! 🎉
 ## 📝 User Data Storage
 
 Your login session is stored in browser's localStorage. You'll stay logged in until you:
+
 - Click "Logout" button
 - Clear browser cache/storage
 - Close private/incognito window
@@ -53,12 +58,14 @@ Passwords are hashed using SHA256 before being sent to the server. Never share y
 ## 💡 Features
 
 ### Login Page
+
 - Email/Password input
 - Password visibility toggle
 - "Create New Account" button
 - "Back to Home" link
 
 ### Register Page
+
 - Full name input
 - Email address
 - Password with confirmation
@@ -66,6 +73,7 @@ Passwords are hashed using SHA256 before being sent to the server. Never share y
 - Auto-redirect to login after success
 
 ### Dashboard
+
 - Welcome message with your name
 - User statistics (total users, admins)
 - User management table
@@ -77,18 +85,22 @@ Passwords are hashed using SHA256 before being sent to the server. Never share y
 ## ❌ Troubleshooting
 
 ### "Table name is required" error
+
 - Go to `/admin/init` and initialize the database
 
 ### Can't login
+
 - Check your email is correct
 - Check password is correct
 - Make sure you created an account first
 
 ### Forgot password?
+
 - Database doesn't have password reset yet
 - Contact administrator to delete and recreate account
 
 ### Session lost after refresh
+
 - Check browser allows localStorage
 - Try a different browser
 - Clear browser cache and try again
@@ -112,6 +124,7 @@ For detailed documentation, see: `/docs/ADMIN_SETUP.md`
 ## 🆘 Support
 
 If you encounter issues:
+
 1. Check the logs in browser console (F12)
 2. Check the network tab to see API responses
 3. Review the full setup guide at `/docs/ADMIN_SETUP.md`

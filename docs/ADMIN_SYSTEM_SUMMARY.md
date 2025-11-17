@@ -7,6 +7,7 @@ A complete admin system for the Mwamunda Investment Limited application with use
 ## 📦 Components Created
 
 ### Backend (Express Routes)
+
 - **File**: `/server/routes/auth.ts`
 - **Features**:
   - Initialize users table
@@ -17,6 +18,7 @@ A complete admin system for the Mwamunda Investment Limited application with use
   - SHA256 password hashing
 
 ### Frontend Pages
+
 1. **Admin Init** (`/admin/init`)
    - Initializes the database users table
    - One-click setup process
@@ -44,6 +46,7 @@ A complete admin system for the Mwamunda Investment Limited application with use
    - File: `/client/pages/AdminDashboard.tsx`
 
 ### Utilities
+
 - **File**: `/client/lib/auth.ts`
 - **Functions**:
   - `initializeUsersTable()` - Create users table
@@ -57,6 +60,7 @@ A complete admin system for the Mwamunda Investment Limited application with use
   - `isAuthenticated()` - Check if user logged in
 
 ### Configuration Files
+
 - **App.tsx**: Added admin routes
 - **server/index.ts**: Added auth API routes
 - **docs/api.php**: Backup of external API code
@@ -66,11 +70,13 @@ A complete admin system for the Mwamunda Investment Limited application with use
 ## 🔄 Integration Points
 
 ### External API Integration
+
 - **URL**: `https://mwamunda.ziratech.com/api.php`
 - **Connection**: Direct HTTP calls from Express backend
 - **Database**: Remote MySQL via Ziratech
 
 ### Data Flow
+
 ```
 User Browser
     ↓
@@ -86,6 +92,7 @@ MySQL Database (Ziratech)
 ## 📊 Database Schema
 
 ### Users Table
+
 ```sql
 CREATE TABLE users (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -102,13 +109,13 @@ CREATE TABLE users (
 
 All endpoints are prefixed with `/api/auth/`
 
-| Method | Endpoint | Purpose |
-|--------|----------|---------|
-| POST | `/init-users-table` | Create users table |
-| POST | `/register` | Register new user |
-| POST | `/login` | Login user |
-| GET | `/users` | Get all users |
-| GET | `/user/:id` | Get single user |
+| Method | Endpoint            | Purpose            |
+| ------ | ------------------- | ------------------ |
+| POST   | `/init-users-table` | Create users table |
+| POST   | `/register`         | Register new user  |
+| POST   | `/login`            | Login user         |
+| GET    | `/users`            | Get all users      |
+| GET    | `/user/:id`         | Get single user    |
 
 ## 🔐 Security Features
 
@@ -121,12 +128,14 @@ All endpoints are prefixed with `/api/auth/`
 ## 🚀 Getting Started
 
 ### First Time Setup
+
 1. Visit `/admin/init` → Click "Initialize Database"
 2. Visit `/admin/register` → Create first admin account
 3. Visit `/admin/login` → Login with credentials
 4. Access `/admin/dashboard` → See admin panel
 
 ### Quick Links
+
 - Initialize: `http://localhost:3000/admin/init`
 - Register: `http://localhost:3000/admin/register`
 - Login: `http://localhost:3000/admin/login`
@@ -195,6 +204,7 @@ docs/
 ## ✨ Design & UX
 
 All admin pages follow the existing design system:
+
 - Gradient headers (primary → secondary)
 - Responsive layouts (mobile, tablet, desktop)
 - Consistent color scheme and typography
@@ -215,6 +225,7 @@ To extend the admin system, modify these files:
 ## 📞 Support
 
 For issues or questions:
+
 1. Check browser console (F12) for errors
 2. Verify external API is accessible
 3. Check localStorage for stored user data

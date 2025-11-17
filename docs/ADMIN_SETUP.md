@@ -47,6 +47,7 @@ curl -X POST http://localhost:8080/api/auth/init-users-table \
 ### Admin Login Page
 
 Located at `/admin/login`, allows existing administrators to:
+
 - Enter email and password
 - Toggle password visibility
 - Create new account (redirect to register)
@@ -55,6 +56,7 @@ Located at `/admin/login`, allows existing administrators to:
 ### Admin Register Page
 
 Located at `/admin/register`, allows creating new admin accounts:
+
 - Full name input
 - Email address
 - Password with confirmation
@@ -64,6 +66,7 @@ Located at `/admin/register`, allows creating new admin accounts:
 ### Admin Dashboard
 
 Located at `/admin/dashboard`, provides:
+
 - Welcome greeting with current user name
 - Statistics cards:
   - Total Users count
@@ -81,11 +84,13 @@ Located at `/admin/dashboard`, provides:
 All endpoints are prefixed with `/api/auth/`:
 
 ### Initialize Users Table
+
 ```
 POST /api/auth/init-users-table
 ```
 
 ### Register User
+
 ```
 POST /api/auth/register
 Content-Type: application/json
@@ -98,6 +103,7 @@ Content-Type: application/json
 ```
 
 Response:
+
 ```json
 {
   "success": true,
@@ -107,6 +113,7 @@ Response:
 ```
 
 ### Login User
+
 ```
 POST /api/auth/login
 Content-Type: application/json
@@ -118,6 +125,7 @@ Content-Type: application/json
 ```
 
 Response:
+
 ```json
 {
   "success": true,
@@ -135,11 +143,13 @@ Response:
 ```
 
 ### Get All Users
+
 ```
 GET /api/auth/users
 ```
 
 ### Get Single User
+
 ```
 GET /api/auth/user/:id
 ```
@@ -194,19 +204,21 @@ localStorage.user = JSON.stringify({
   name: "Admin Name",
   role: "user",
   created_at: "2024-01-01T12:00:00Z",
-  updated_at: "2024-01-01T12:00:00Z"
-})
+  updated_at: "2024-01-01T12:00:00Z",
+});
 ```
 
 ## Security Considerations
 
 ### Current Implementation
+
 - ✅ Passwords are hashed using SHA256
 - ✅ Unique email constraint at database level
 - ✅ User data (without password) only sent to frontend
 - ✅ CORS headers configured on external API
 
 ### Future Enhancements
+
 - [ ] Implement JWT tokens for session management
 - [ ] Add HTTPS/TLS requirement
 - [ ] Implement rate limiting on auth endpoints
@@ -219,19 +231,23 @@ localStorage.user = JSON.stringify({
 ## Troubleshooting
 
 ### Users table not created
+
 - Visit `/admin/register` to trigger table creation
 - Or manually call POST `/api/auth/init-users-table`
 
 ### Login fails with "Invalid email or password"
+
 - Verify email exists in database
 - Check password is correct
 - Ensure users table was created
 
 ### CORS errors
+
 - External API has CORS headers enabled
 - If issues persist, check network tab for actual error
 
 ### Session lost on page refresh
+
 - Data is stored in localStorage, should persist
 - Check browser's localStorage storage limit
 - Clear browser cache if needed

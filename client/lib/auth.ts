@@ -31,7 +31,7 @@ export async function initializeUsersTable(): Promise<any> {
 export async function registerUser(
   email: string,
   password: string,
-  name?: string
+  name?: string,
 ): Promise<AuthResponse> {
   const response = await fetch(`${API_BASE_URL}/register`, {
     method: "POST",
@@ -45,7 +45,7 @@ export async function registerUser(
 
 export async function loginUser(
   email: string,
-  password: string
+  password: string,
 ): Promise<AuthResponse> {
   const response = await fetch(`${API_BASE_URL}/login`, {
     method: "POST",
