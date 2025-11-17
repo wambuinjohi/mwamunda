@@ -213,6 +213,16 @@ export default function Contact() {
               </div>
             )}
 
+            {error && (
+              <div className="p-6 rounded-xl bg-red-50 border border-red-200 flex items-center gap-3 animate-slide-in-down">
+                <AlertCircle className="w-6 h-6 text-red-600 flex-shrink-0" />
+                <div>
+                  <h4 className="font-semibold text-red-900">Error</h4>
+                  <p className="text-sm text-red-700">{error}</p>
+                </div>
+              </div>
+            )}
+
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-sm font-semibold text-foreground mb-2">
