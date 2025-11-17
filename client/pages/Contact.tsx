@@ -416,10 +416,38 @@ export default function Contact() {
             <div>
               <h4 className="font-bold text-white mb-4">Products</h4>
               <ul className="space-y-2 text-sm">
-                <li className="text-white/70">Fair Personal Loans</li>
-                <li className="text-white/70">Chama Loans</li>
-                <li className="text-white/70">Debt Advice Services</li>
-                <li className="text-white/70">Financial Capability Training</li>
+                <li>
+                  <Link
+                    to="/products/fair-personal-loans"
+                    className="text-white/70 hover:text-white transition-colors"
+                  >
+                    Fair Personal Loans
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/products/chama-loans"
+                    className="text-white/70 hover:text-white transition-colors"
+                  >
+                    Chama Loans
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/products/debt-advice-services"
+                    className="text-white/70 hover:text-white transition-colors"
+                  >
+                    Debt Advice Services
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/products/financial-capability-training"
+                    className="text-white/70 hover:text-white transition-colors"
+                  >
+                    Financial Capability Training
+                  </Link>
+                </li>
               </ul>
             </div>
 
