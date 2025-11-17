@@ -1,20 +1,16 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import {
-  LayoutDashboard,
-  Users,
-  LogOut,
-  Menu,
-  X,
-  Home,
-} from "lucide-react";
+import { LayoutDashboard, Users, LogOut, Menu, X, Home } from "lucide-react";
 
 interface AdminSidebarProps {
   onLogout: () => void;
   userName: string;
 }
 
-export default function AdminSidebar({ onLogout, userName }: AdminSidebarProps) {
+export default function AdminSidebar({
+  onLogout,
+  userName,
+}: AdminSidebarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
@@ -45,11 +41,7 @@ export default function AdminSidebar({ onLogout, userName }: AdminSidebarProps) 
           onClick={() => setIsOpen(!isOpen)}
           className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
         >
-          {isOpen ? (
-            <X className="w-6 h-6" />
-          ) : (
-            <Menu className="w-6 h-6" />
-          )}
+          {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
         <span className="ml-4 font-semibold text-foreground">Admin Portal</span>
       </div>
