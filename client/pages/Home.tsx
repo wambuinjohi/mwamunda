@@ -51,7 +51,7 @@ export default function Home() {
                 </span>
               </h1>
 
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
                 Mwamunda Investment Limited provides affordable, accessible
                 financial products designed to help micro and small businesses
                 thrive. We're committed to putting predatory lenders out of
