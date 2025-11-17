@@ -93,6 +93,52 @@ export default function AdminContacts() {
     }
   };
 
+  const handleCopyEmail = () => {
+    if (selectedContact?.email) {
+      navigator.clipboard.writeText(selectedContact.email);
+      toast({
+        title: "Copied",
+        description: "Email copied to clipboard",
+      });
+    }
+  };
+
+  const handleSendResponse = async () => {
+    if (!selectedContact || !responseEmail.trim()) {
+      toast({
+        title: "Error",
+        description: "Please enter a response message",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      await updateContactStatus(selectedContact.id, "responded");
+      setContacts((prev) =>
+        prev.map((c) =>
+          c.id === selectedContact.id ? { ...c, status: "responded" } : c,
+        ),
+      );
+      setSelectedContact((prev) =>
+        prev ? { ...prev, status: "responded" } : null
+      );
+      setResponseEmail("");
+      toast({
+        title: "Success",
+        description: "Response recorded and contact marked as responded",
+      });
+    } catch (error) {
+      const errorMessage =
+        error instanceof Error ? error.message : "Failed to send response";
+      toast({
+        title: "Error",
+        description: errorMessage,
+        variant: "destructive",
+      });
+    }
+  };
+
   const filteredContacts = contacts.filter((contact) => {
     if (filter === "all") return true;
     return contact.status === filter;
