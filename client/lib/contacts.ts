@@ -125,3 +125,95 @@ export async function updateContactStatus(
     throw new Error(errorMessage);
   }
 }
+
+export async function addInternalNote(
+  id: number,
+  notes: string,
+): Promise<ContactResponse> {
+  try {
+    const response = await fetch(`${API_BASE_URL}/${id}/notes`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ internal_notes: notes }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`API error: ${response.status} ${response.statusText}`);
+    }
+
+    const data = await response.json();
+
+    if (data.error) {
+      throw new Error(data.error);
+    }
+
+    return data;
+  } catch (error) {
+    const errorMessage =
+      error instanceof Error ? error.message : "Failed to add notes";
+    console.error("Error adding notes:", error);
+    throw new Error(errorMessage);
+  }
+}
+
+export async function sendResponseEmail(
+  id: number,
+  responseEmail: string,
+): Promise<ContactResponse> {
+  try {
+    const response = await fetch(`${API_BASE_URL}/${id}/respond`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ response_email: responseEmail }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`API error: ${response.status} ${response.statusText}`);
+    }
+
+    const data = await response.json();
+
+    if (data.error) {
+      throw new Error(data.error);
+    }
+
+    return data;
+  } catch (error) {
+    const errorMessage =
+      error instanceof Error ? error.message : "Failed to send response";
+    console.error("Error sending response:", error);
+    throw new Error(errorMessage);
+  }
+}
+
+export async function deleteContact(id: number): Promise<ContactResponse> {
+  try {
+    const response = await fetch(`${API_BASE_URL}/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`API error: ${response.status} ${response.statusText}`);
+    }
+
+    const data = await response.json();
+
+    if (data.error) {
+      throw new Error(data.error);
+    }
+
+    return data;
+  } catch (error) {
+    const errorMessage =
+      error instanceof Error ? error.message : "Failed to delete contact";
+    console.error("Error deleting contact:", error);
+    throw new Error(errorMessage);
+  }
+}
