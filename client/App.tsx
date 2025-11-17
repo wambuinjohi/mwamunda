@@ -33,10 +33,19 @@ export const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/products/fair-personal-loans" element={<FairPersonalLoans />} />
+          <Route
+            path="/products/fair-personal-loans"
+            element={<FairPersonalLoans />}
+          />
           <Route path="/products/chama-loans" element={<ChamaLoans />} />
-          <Route path="/products/debt-advice-services" element={<DebtAdviceServices />} />
-          <Route path="/products/financial-capability-training" element={<FinancialCapabilityTraining />} />
+          <Route
+            path="/products/debt-advice-services"
+            element={<DebtAdviceServices />}
+          />
+          <Route
+            path="/products/financial-capability-training"
+            element={<FinancialCapabilityTraining />}
+          />
           <Route path="/admin/setup" element={<AdminSetup />} />
           <Route path="/admin/init" element={<AdminInit />} />
           <Route path="/admin/login" element={<AdminLogin />} />
