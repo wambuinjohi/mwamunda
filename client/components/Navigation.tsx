@@ -35,19 +35,13 @@ export default function Navigation() {
           {/* Logo */}
           <Link
             to="/"
-            className="flex items-center gap-2 group"
+            className="flex items-center gap-2 group hover:opacity-80 transition-opacity"
           >
-            <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center text-white font-bold text-lg group-hover:shadow-lg group-hover:shadow-primary/50 transition-all duration-300">
-              M
-            </div>
-            <div className="hidden sm:block">
-              <div className="text-sm font-bold text-primary leading-none">
-                MWAMUNDA
-              </div>
-              <div className="text-xs text-muted-foreground leading-none">
-                Investment Limited
-              </div>
-            </div>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2Ffbf49e0b8b244100b448033b1a23a70b%2F92cea3121dc44b17903ff04a0698d8d8?format=webp&width=400"
+              alt="Mwamunda Investment Limited"
+              className="h-12 md:h-14 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
