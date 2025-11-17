@@ -16,14 +16,16 @@ export default function AdminSidebar({
 
   const navItems = [
     {
+      id: "dashboard",
       icon: <LayoutDashboard className="w-5 h-5" />,
       label: "Dashboard",
       path: "/admin/dashboard",
     },
     {
+      id: "users",
       icon: <Users className="w-5 h-5" />,
       label: "Users",
-      path: "/admin/dashboard",
+      path: "/admin/users",
     },
   ];
 
@@ -83,7 +85,7 @@ export default function AdminSidebar({
           <div className="px-3 py-6 space-y-2">
             {navItems.map((item) => (
               <Link
-                key={item.path}
+                key={item.id}
                 to={item.path}
                 onClick={handleLinkClick}
                 className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${
