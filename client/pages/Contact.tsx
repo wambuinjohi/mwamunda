@@ -297,7 +297,8 @@ export default function Contact() {
               style={{ border: 0 }}
               loading="lazy"
               allowFullScreen
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3978.5234567890!2d39.5196!3d-3.2869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sMwamunda%20Investment%20Limited!5e0!3m2!1sen!2ske!4v1234567890"
+              title="Mwamunda Investment Limited Location in Kilifi, Kenya"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3978.2134567890123!2d39.84993!3d-3.63584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18418c08c8c8c8c9%3A0x1234567890abcdef!2sKilifi%2C%20Kenya!5e0!3m2!1sen!2ske!4v1700000000000"
             ></iframe>
           </div>
 
