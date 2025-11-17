@@ -75,20 +75,20 @@ export default function Home() {
                 </Link>
               </div>
 
-              <div className="flex gap-8 mt-12 pt-8 border-t border-border">
+              <div className="flex flex-wrap gap-4 sm:gap-6 md:gap-8 mt-8 sm:mt-10 md:mt-12 pt-6 sm:pt-8 border-t border-border">
                 <div
                   className="animate-slide-in-up"
                   style={{ animationDelay: "0.1s" }}
                 >
-                  <div className="text-3xl font-bold text-primary">2019</div>
-                  <p className="text-sm text-muted-foreground">Founded</p>
+                  <div className="text-2xl sm:text-3xl font-bold text-primary">2019</div>
+                  <p className="text-xs sm:text-sm text-muted-foreground">Founded</p>
                 </div>
                 <div
                   className="animate-slide-in-up"
                   style={{ animationDelay: "0.2s" }}
                 >
-                  <div className="text-3xl font-bold text-secondary">47+</div>
-                  <p className="text-sm text-muted-foreground">
+                  <div className="text-2xl sm:text-3xl font-bold text-secondary">47+</div>
+                  <p className="text-xs sm:text-sm text-muted-foreground">
                     Counties Served
                   </p>
                 </div>
@@ -96,8 +96,8 @@ export default function Home() {
                   className="animate-slide-in-up"
                   style={{ animationDelay: "0.3s" }}
                 >
-                  <div className="text-3xl font-bold text-accent">1000s</div>
-                  <p className="text-sm text-muted-foreground">
+                  <div className="text-2xl sm:text-3xl font-bold text-accent">1000s</div>
+                  <p className="text-xs sm:text-sm text-muted-foreground">
                     Families Empowered
                   </p>
                 </div>
