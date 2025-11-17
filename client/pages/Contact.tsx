@@ -296,12 +296,11 @@ export default function Contact() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center font-bold text-lg">
-                  M
-                </div>
-                <span className="font-bold text-lg">MWAMUNDA</span>
-              </div>
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2Ffbf49e0b8b244100b448033b1a23a70b%2F92cea3121dc44b17903ff04a0698d8d8?format=webp&width=400"
+                alt="Mwamunda Investment Limited"
+                className="h-16 w-auto mb-4"
+              />
               <p className="text-white/70 text-sm">
                 Financial solutions for the underserved since 2019
               </p>
