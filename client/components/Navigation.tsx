@@ -102,6 +102,11 @@ export default function Navigation() {
           </div>
         )}
       </div>
+
+      <ContactModal
+        open={isContactModalOpen}
+        onOpenChange={setIsContactModalOpen}
+      />
     </nav>
   );
 }
