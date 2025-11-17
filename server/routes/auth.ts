@@ -405,6 +405,170 @@ export const updateContactStatus: RequestHandler = async (req, res) => {
   }
 };
 
+// Delete contact (admin only)
+export const deleteContact: RequestHandler = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    if (!id) {
+      res.status(400).json({ error: "Missing contact id" });
+      return;
+    }
+
+    const response = await fetch(`${API_URL}?table=contacts&id=${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      res.json({
+        success: true,
+        message: "Contact deleted successfully",
+      });
+    } else {
+      res.status(400).json({ error: data.error || "Failed to delete contact" });
+    }
+  } catch (error) {
+    const errorMessage =
+      error instanceof Error ? error.message : "Unknown error";
+    console.error("deleteContact error:", errorMessage);
+    res
+      .status(500)
+      .json({ error: "Failed to delete contact", details: errorMessage });
+  }
+};
+
+// Add internal notes (admin only)
+export const addInternalNotes: RequestHandler = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { internal_notes } = req.body;
+
+    if (!id || internal_notes === undefined) {
+      res.status(400).json({ error: "Missing id or internal_notes" });
+      return;
+    }
+
+    const response = await fetch(API_URL, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        table: "contacts",
+        id: parseInt(id),
+        data: { internal_notes },
+      }),
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      res.json({
+        success: true,
+        message: "Internal notes added successfully",
+      });
+    } else {
+      res.status(400).json({ error: data.error || "Failed to add notes" });
+    }
+  } catch (error) {
+    const errorMessage =
+      error instanceof Error ? error.message : "Unknown error";
+    console.error("addInternalNotes error:", errorMessage);
+    res
+      .status(500)
+      .json({ error: "Failed to add notes", details: errorMessage });
+  }
+};
+
+// Send response email (admin only)
+export const sendResponseEmail: RequestHandler = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { response_email } = req.body;
+
+    if (!id || !response_email) {
+      res.status(400).json({ error: "Missing id or response_email" });
+      return;
+    }
+
+    // First get the contact details
+    const contactResponse = await fetch(`${API_URL}?table=contacts&id=${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const contacts = await contactResponse.json();
+
+    if (!Array.isArray(contacts) || contacts.length === 0) {
+      res.status(404).json({ error: "Contact not found" });
+      return;
+    }
+
+    const contact = contacts[0];
+
+    // Import and send email
+    const { sendResponseEmail: sendEmail } = await import("../utils/email");
+
+    const emailSent = await sendEmail(
+      contact.email,
+      contact.name,
+      response_email,
+    );
+
+    if (!emailSent) {
+      console.warn(
+        "Email notification not configured, but response recorded for contact:",
+        contact.id,
+      );
+    }
+
+    // Update contact with response details
+    const updateResponse = await fetch(API_URL, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        table: "contacts",
+        id: parseInt(id),
+        data: {
+          response_email,
+          response_sent_at: new Date().toISOString(),
+          status: "responded",
+        },
+      }),
+    });
+
+    const updateData = await updateResponse.json();
+
+    if (updateData.success) {
+      res.json({
+        success: true,
+        message: "Response recorded successfully",
+        emailSent,
+      });
+    } else {
+      res.status(400).json({
+        error: updateData.error || "Failed to record response",
+      });
+    }
+  } catch (error) {
+    const errorMessage =
+      error instanceof Error ? error.message : "Unknown error";
+    console.error("sendResponseEmail error:", errorMessage);
+    res
+      .status(500)
+      .json({ error: "Failed to send response", details: errorMessage });
+  }
+};
+
 // Setup route - Initialize table and seed admin user
 export const setupSystem: RequestHandler = async (req, res) => {
   try {
