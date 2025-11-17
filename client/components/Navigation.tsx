@@ -30,17 +30,17 @@ export default function Navigation() {
         isScrolled ? "bg-white/90 backdrop-blur-md shadow-lg" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-32 md:h-40">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16 sm:h-20 md:h-24 lg:h-28">
           {/* Logo */}
           <Link
             to="/"
-            className="flex items-center gap-2 group hover:opacity-80 transition-opacity"
+            className="flex items-center gap-2 group hover:opacity-80 transition-opacity flex-shrink-0"
           >
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2F675a5c01881345b88968fcdd971866d7%2F7e6019eab478401686a679312028d4e8?format=webp&width=800"
               alt="Mwamunda Investment Limited"
-              className="h-24 md:h-28 w-auto"
+              className="h-12 sm:h-16 md:h-20 lg:h-24 w-auto"
             />
           </Link>
 
