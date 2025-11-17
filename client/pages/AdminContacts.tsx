@@ -1,6 +1,14 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Mail, Phone, MessageSquare, Trash2, Eye } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MessageSquare,
+  Trash2,
+  Eye,
+  Copy,
+  Send,
+} from "lucide-react";
 import { getStoredUser, clearUser } from "@/lib/auth";
 import { useToast } from "@/hooks/use-toast";
 import { getAllContacts, Contact, updateContactStatus } from "@/lib/contacts";
@@ -15,6 +23,8 @@ export default function AdminContacts() {
   const [selectedContact, setSelectedContact] = useState<Contact | null>(null);
   const [showDetails, setShowDetails] = useState(false);
   const [filter, setFilter] = useState<string>("all");
+  const [internalNote, setInternalNote] = useState<string>("");
+  const [responseEmail, setResponseEmail] = useState<string>("");
 
   // Redirect if not logged in
   useEffect(() => {
@@ -91,6 +101,52 @@ export default function AdminContacts() {
     }
   };
 
+  const handleCopyEmail = () => {
+    if (selectedContact?.email) {
+      navigator.clipboard.writeText(selectedContact.email);
+      toast({
+        title: "Copied",
+        description: "Email copied to clipboard",
+      });
+    }
+  };
+
+  const handleSendResponse = async () => {
+    if (!selectedContact || !responseEmail.trim()) {
+      toast({
+        title: "Error",
+        description: "Please enter a response message",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      await updateContactStatus(selectedContact.id, "responded");
+      setContacts((prev) =>
+        prev.map((c) =>
+          c.id === selectedContact.id ? { ...c, status: "responded" } : c,
+        ),
+      );
+      setSelectedContact((prev) =>
+        prev ? { ...prev, status: "responded" } : null,
+      );
+      setResponseEmail("");
+      toast({
+        title: "Success",
+        description: "Response recorded and contact marked as responded",
+      });
+    } catch (error) {
+      const errorMessage =
+        error instanceof Error ? error.message : "Failed to send response";
+      toast({
+        title: "Error",
+        description: errorMessage,
+        variant: "destructive",
+      });
+    }
+  };
+
   const filteredContacts = contacts.filter((contact) => {
     if (filter === "all") return true;
     return contact.status === filter;
@@ -123,7 +179,7 @@ export default function AdminContacts() {
         {/* Page Content */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           {/* Stats Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-12">
             <div className="bg-white rounded-2xl p-6 border border-border shadow-sm">
               <div className="flex items-center justify-between">
                 <div>
@@ -187,14 +243,31 @@ export default function AdminContacts() {
                 </div>
               </div>
             </div>
+
+            <div className="bg-white rounded-2xl p-6 border border-border shadow-sm">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-muted-foreground text-sm font-medium">
+                    Responded
+                  </p>
+                  <p className="text-4xl font-bold text-purple-600 mt-2">
+                    {contacts.filter((c) => c.status === "responded").length}
+                  </p>
+                </div>
+                <div className="w-12 h-12 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center">
+                  <Send className="w-6 h-6" />
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Filter Tabs */}
-          <div className="mb-6 flex gap-2 border-b border-border">
+          <div className="mb-6 flex gap-2 border-b border-border overflow-x-auto">
             {[
               { value: "all", label: "All" },
               { value: "new", label: "New" },
               { value: "in_progress", label: "In Progress" },
+              { value: "responded", label: "Responded" },
               { value: "resolved", label: "Resolved" },
             ].map((tab) => (
               <button
