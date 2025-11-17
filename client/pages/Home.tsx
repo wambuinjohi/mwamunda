@@ -430,6 +430,79 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Success Stories Section */}
+      <section className="py-20 md:py-32 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Success Stories
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Real people, real results. See how Mwamunda is transforming lives across Kenya
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-slide-in-left">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F675a5c01881345b88968fcdd971866d7%2Fd97c126d37b6465db10ea02f935cf545?format=webp&width=800"
+                alt="Happy customers"
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6 bg-white">
+                <div className="flex gap-1 mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-yellow-400">★</span>
+                  ))}
+                </div>
+                <p className="text-muted-foreground italic mb-4">
+                  "Mwamunda gave us the financial support we needed to expand our business. The process was quick and transparent."
+                </p>
+                <p className="font-semibold text-foreground">Small Business Owner</p>
+              </div>
+            </div>
+
+            <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-slide-in-up">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F675a5c01881345b88968fcdd971866d7%2Fb1889c4d9f5545cc9ffaf6474b456ef1?format=webp&width=800"
+                alt="Celebration of success"
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6 bg-white">
+                <div className="flex gap-1 mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-yellow-400">★</span>
+                  ))}
+                </div>
+                <p className="text-muted-foreground italic mb-4">
+                  "With fair rates and helpful support, we've been able to grow sustainably. Highly recommended!"
+                </p>
+                <p className="font-semibold text-foreground">Entrepreneur</p>
+              </div>
+            </div>
+
+            <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 animate-slide-in-right">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F675a5c01881345b88968fcdd971866d7%2Fe02d9fa55b634777b9da5ef97090d668?format=webp&width=800"
+                alt="Team success"
+                className="w-full h-64 object-cover"
+              />
+              <div className="p-6 bg-white">
+                <div className="flex gap-1 mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-yellow-400">★</span>
+                  ))}
+                </div>
+                <p className="text-muted-foreground italic mb-4">
+                  "Unlike predatory lenders, Mwamunda's transparent approach and genuine care for our success stands out."
+                </p>
+                <p className="font-semibold text-foreground">Group Lender</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="relative py-20 md:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-primary/80 opacity-90"></div>
