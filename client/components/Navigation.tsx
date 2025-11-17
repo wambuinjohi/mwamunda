@@ -40,7 +40,7 @@ export default function Navigation() {
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2Ffbf49e0b8b244100b448033b1a23a70b%2F92cea3121dc44b17903ff04a0698d8d8?format=webp&width=400"
               alt="Mwamunda Investment Limited"
-              className="h-12 md:h-14 w-auto"
+              className="h-24 md:h-28 w-auto"
             />
           </Link>
 
