@@ -90,13 +90,15 @@ export default function Navigation() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              to="/contact"
+            <button
+              onClick={() => {
+                setIsContactModalOpen(true);
+                setIsOpen(false);
+              }}
               className="block w-full px-4 py-2 rounded-lg bg-gradient-to-r from-primary to-secondary text-white font-semibold text-center hover:shadow-lg transition-all duration-300"
-              onClick={() => setIsOpen(false)}
             >
               Get Started
-            </Link>
+            </button>
           </div>
         )}
       </div>
